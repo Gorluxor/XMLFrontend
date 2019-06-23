@@ -7,17 +7,19 @@ import {CommonModule} from '@angular/common';
 import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
 import {AgentsService} from './agents.service';
 import {HttpClientModule} from '@angular/common/http';
+import { ConfirmReservationComponent } from './component/confirm-reservation/confirm-reservation.component';
 
 const agentRoutes: Routes = [
   {
     path: 'agent', component: AgentsComponent, children: [
-      { path: 'new-unit/:id', component: NewUnitComponent}
+      { path: 'new-unit/:id', component: NewUnitComponent},
+      { path: 'confirm-rsv/:id', component: ConfirmReservationComponent}
     ]
   },
 ];
 
 @NgModule({
-  declarations: [AgentsComponent, NewUnitComponent],
+  declarations: [AgentsComponent, NewUnitComponent, ConfirmReservationComponent],
   imports: [
     RouterModule.forRoot(agentRoutes),
     ReactiveFormsModule,
