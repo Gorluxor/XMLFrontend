@@ -1,0 +1,45 @@
+<div class="con ">
+<div class="container ">
+<form [formGroup]="form" >
+
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input formControlName="name" [ngClass]="{'red-outline': !form.get('name').valid,'green-outline': form.get('name').valid }"  type="text" class="form-control" id="name" required placeholder="Enter name">
+  </div>
+  <div class="form-group">
+    <label for="size">Size</label>
+    <input formControlName="size" [ngClass]="{'red-outline': !form.get('size').valid,'green-outline': form.get('size').valid }"  type="number" class="form-control" id="size" placeholder="Enter size">
+  </div>
+  <div class="form-group">
+    <label for="capacity">Capacity</label>
+    <input formControlName="capacity" [ngClass]="{'red-outline': !form.get('capacity').valid,'green-outline': form.get('capacity').valid }"  type="number" class="form-control" id="capacity" placeholder="Enter capacity">
+  </div>
+  <div class="form-group">
+    <label for="type">Type</label>
+    <select (change)="onChangeType()" formControlName="type" [ngClass]="{'red-outline': !form.get('type').valid,'green-outline': form.get('type').valid }"   class="form-control" id="type"  >
+      <option value="" disabled selected>Select Type</option>
+      <option value="1">Type 1</option>
+      <option value="2">Type 2</option>
+      <option value="3">Type 3</option>
+
+    </select>
+  </div>
+  <div class = "form-group">
+    <label>Select target certificate: </label>
+    <ng-multiselect-dropdown [placeholder]="'Select Services'"
+                             [data]="dropdownList"
+                              formControlName="services"
+                             [settings]="dropdownSettings"
+                             (onSelect)="onItemSelect($event)"
+                             (onSelectAll)="onSelectAll($event)"
+
+    >
+    </ng-multiselect-dropdown>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid" (click)="onSubmit()" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+

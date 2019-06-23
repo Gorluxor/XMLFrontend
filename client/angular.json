@@ -26,7 +26,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "../node_modules/jquery/dist/jquery.min.js",
+              "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -112,6 +115,76 @@
             "production": {
               "devServerTarget": "client:serve:production"
             }
+          }
+        }
+      }
+    },
+    "agent": {
+      "projectType": "library",
+      "root": "projects/agent",
+      "sourceRoot": "projects/agent/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/agent/tsconfig.lib.json",
+            "project": "projects/agent/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/agent/src/test.ts",
+            "tsConfig": "projects/agent/tsconfig.spec.json",
+            "karmaConfig": "projects/agent/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/agent/tsconfig.lib.json",
+              "projects/agent/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "agents": {
+      "projectType": "library",
+      "root": "projects/agents",
+      "sourceRoot": "projects/agents/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/agents/tsconfig.lib.json",
+            "project": "projects/agents/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/agents/src/test.ts",
+            "tsConfig": "projects/agents/tsconfig.spec.json",
+            "karmaConfig": "projects/agents/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/agents/tsconfig.lib.json",
+              "projects/agents/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }

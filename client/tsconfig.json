@@ -18,6 +18,20 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "agent": [
+        "dist/agent"
+      ],
+      "agent/*": [
+        "dist/agent/*"
+      ],
+      "agents": [
+        "dist/agents"
+      ],
+      "agents/*": [
+        "dist/agents/*"
+      ]
+    }
   }
 }
