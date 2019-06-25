@@ -23,9 +23,12 @@ export class AgentsService {
     return this.http.get(this.path.getUnitTypes);
   }
 
-  getReservation(): Observable<any>{
+  getReservation(): Observable<any> {
     return this.http.get(this.path.getReservation);
   }
 
+  getAllMessages(): Observable<any> {
+    return this.http.get(this.path.getMessages);
+  }
 
 }
