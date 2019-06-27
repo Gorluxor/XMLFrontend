@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AgentsService} from '../../agents.service';
 import {Message} from '../../../../../../src/model/Message';
+import {ActivatedRoute} from '@angular/router';
+import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'lib-respond-message',
@@ -9,23 +11,42 @@ import {Message} from '../../../../../../src/model/Message';
 })
 export class RespondMessageComponent implements OnInit {
 
-  number: number[];
-  message: string;
-  messages: Message[];
+  form: FormGroup;
 
-  constructor(private agentService: AgentsService) {
-    this.number = [];
-    this.message = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum';
-    this.number.push(3);
-    this.number.push(3);
-    this.number.push(3);
+  message: Message;
+  messages: Message[];
+  date: Date;
+  crId: number;
+
+  constructor(private route: ActivatedRoute, private agentService: AgentsService) {
+
+    this.date = new Date();
+
   }
 
   ngOnInit() {
-    this.agentService.getAllMessages().subscribe(data => {
+    this.crId = +this.route.snapshot.paramMap.get('id');
+    this.message = new Message();
+    this.agentService.getAllMessages(this.crId).subscribe(data => {
       this.messages = data;
+      console.log(this.messages);
+      for ( const m of this.messages) {
+        m.timeStamp = new Date(m.timeStamp);
+      }
     });
   }
+  onRespond() {
+    this.message.timeStamp = new Date();
+    this.message.sender = this.messages[0].receiver;
+    this.message.receiver = this.messages[0].sender;
+    this.agentService.respondMessage(this.crId, this.message).subscribe(
+      data => {
+        console.log(this.message);
+        window.location.reload();
+      }
 
+    );
+
+  }
 
 }

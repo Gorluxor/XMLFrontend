@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
 import {Path} from '../../../../src/model/Path';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
+}
 
 @Injectable({
   providedIn: 'root'
@@ -27,8 +31,17 @@ export class AgentsService {
     return this.http.get(this.path.getReservation);
   }
 
-  getAllMessages(): Observable<any> {
-    return this.http.get(this.path.getMessages);
+  getAllMessages(id): Observable<any> {
+    return this.http.get(this.path.getMessages + id);
+  }
+
+  getAllChatRooms(): Observable<any> {
+    return this.http.get(this.path.getChatRooms);
+  }
+
+  respondMessage(id, msg): Observable<any> {
+    return this.http.post(this.path.respondMessage + id, msg, httpOptions
+    );
   }
 
 }

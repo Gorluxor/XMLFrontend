@@ -9,19 +9,21 @@ import {AgentsService} from './agents.service';
 import {HttpClientModule} from '@angular/common/http';
 import { ConfirmReservationComponent } from './component/confirm-reservation/confirm-reservation.component';
 import { RespondMessageComponent } from './component/respond-message/respond-message.component';
+import { InboxComponent } from './component/inbox/inbox.component';
 
 const agentRoutes: Routes = [
   {
     path: 'agent', component: AgentsComponent, children: [
       { path: 'new-unit/:id', component: NewUnitComponent},
       { path: 'confirm-rsv/:id', component: ConfirmReservationComponent},
-      { path: 'respond-messages', component: RespondMessageComponent},
+      { path: 'messages/:id', component: RespondMessageComponent},
+      { path: 'inbox', component: InboxComponent},
     ]
   },
 ];
 
 @NgModule({
-  declarations: [AgentsComponent, NewUnitComponent, ConfirmReservationComponent, RespondMessageComponent],
+  declarations: [AgentsComponent, NewUnitComponent, ConfirmReservationComponent, RespondMessageComponent, InboxComponent],
   imports: [
     RouterModule.forRoot(agentRoutes),
     ReactiveFormsModule,

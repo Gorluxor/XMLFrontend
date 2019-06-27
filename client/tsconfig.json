@@ -31,6 +31,12 @@
       ],
       "agents/*": [
         "dist/agents/*"
+      ],
+      "admin": [
+        "dist/admin"
+      ],
+      "admin/*": [
+        "dist/admin/*"
       ]
     }
   }

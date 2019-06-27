@@ -6,3 +6,18 @@ h1{
   padding-bottom: 70px;
   padding-top: 50px;
 }
+.cr{
+  /*display: inline-block;*/
+  padding-bottom: 15px;
+}
+.timestamp{
+  /*display: inline-block;*/
+  float: right;
+}
+.msg{
+  display: inline-block;
+}
+.sender{
+  display: inline-block;
+  font-weight: bold;
+}

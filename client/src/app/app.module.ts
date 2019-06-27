@@ -9,6 +9,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
 import {HttpClientModule} from '@angular/common/http';
+import {AdminModule} from '../../projects/admin/src/lib/admin.module';
 
 const appRoutes: Routes = [
  // { path: 'agent', component: AgentsComponent },
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     AgentsModule,
+    AdminModule,
     ReactiveFormsModule,
     CommonModule,
     FormsModule,
