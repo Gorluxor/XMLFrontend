@@ -23,7 +23,7 @@ export class InboxComponent implements OnInit {
   }
 
   onClick(id) {
-    this.router.navigate(['agent/messages/'+ id]);
+    this.router.navigate(['agent/messages/' + id]);
   }
 
 }

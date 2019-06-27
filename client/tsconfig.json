@@ -37,6 +37,12 @@
       ],
       "admin/*": [
         "dist/admin/*"
+      ],
+      "user": [
+        "dist/user"
+      ],
+      "user/*": [
+        "dist/user/*"
       ]
     }
   }

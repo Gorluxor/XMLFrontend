@@ -5,4 +5,6 @@ export class Path {
   getMessages = 'http://localhost:9999/api/message/msg/user/1/chatroom/';
   getChatRooms = 'http://localhost:9999/api/message/msg/user/1';
   respondMessage = 'http://localhost:9999/api/message/msg/';
+  searchAccommodation = 'http://localhost:9999/api/search/search/accommodation/normal';
+  getAllAccomodation = ' ';
 }
