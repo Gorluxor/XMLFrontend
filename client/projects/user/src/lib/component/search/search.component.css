@@ -7,3 +7,25 @@
 #advancedSearch{
   float: right;
 }
+.star{
+  width: 40px;
+  height: 40px;
+
+}
+.firstLine{
+}
+h3{
+
+  float: left;
+}
+.stars{
+  padding-right: 30px;
+  float: right;
+}
+#toggleSearch{
+  float: right;
+}
+.reserve{
+  float: right;
+}
+

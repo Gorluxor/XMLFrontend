@@ -11,6 +11,7 @@ import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
 import { SearchComponent } from './component/search/search.component';
+import { AccommodationComponent } from './component/accommodation/accommodation.component';
 
 const userRoutes: Routes = [
   {
@@ -21,7 +22,7 @@ const userRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [UserComponent, SearchComponent],
+  declarations: [UserComponent, SearchComponent, AccommodationComponent],
   imports: [
     RouterModule.forRoot(userRoutes),
     ReactiveFormsModule,

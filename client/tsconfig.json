@@ -43,6 +43,12 @@
       ],
       "user/*": [
         "dist/user/*"
+      ],
+      "auth": [
+        "dist/auth"
+      ],
+      "auth/*": [
+        "dist/auth/*"
       ]
     }
   }

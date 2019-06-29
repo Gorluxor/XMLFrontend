@@ -23,6 +23,9 @@ export class UserService {
     searchAccommodation(search): Observable<any> {
     return this.http.post(this.path.searchAccommodation, search, httpOptions);
   }
+  advancedSearchAccommodation(search): Observable<any> {
+    return this.http.post(this.path.advancedSearchAccommodation, search, httpOptions);
+  }
   getAllAccommodation(): Observable<any> {
     return this.http.get(this.path.getAllAccomodation);
   }

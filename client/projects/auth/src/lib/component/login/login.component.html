@@ -1,0 +1,23 @@
+<div class="container ">
+  <br>
+  <br>
+  <br>
+  <h1>Login</h1>
+  <br>
+  <br>
+  <br>
+  <form [formGroup]="form" >
+
+
+    <div class="form-group">
+      <label for="userName">User Name</label>
+      <input formControlName="userName" [ngClass]="{'red-outline': !form.get('userName').valid,'green-outline': form.get('userName').valid }"  type="text" class="form-control" id="userName" required placeholder="Enter Username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input formControlName="password" [ngClass]="{'red-outline': !form.get('password').valid,'green-outline': form.get('password').valid }"  type="password" class="form-control" id="password" required placeholder="Enter Password">
+    </div>
+
+    <button type="submit" [disabled]="form.invalid" (click)="onSubmit()" class="btn btn-primary">New Agent</button>
+  </form>
+</div>

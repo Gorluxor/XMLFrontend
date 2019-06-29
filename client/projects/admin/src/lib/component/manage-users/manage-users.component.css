@@ -1,0 +1,15 @@
+.green{
+  background-color: green;
+  border: grey;
+}
+.red{
+  background-color: red;
+  border: dimgray;
+}
+.yellow{
+  background-color: yellow;
+  border: gray;
+}
+.container{
+  padding-top: 100px;
+}

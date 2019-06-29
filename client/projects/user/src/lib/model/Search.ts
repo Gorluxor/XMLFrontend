@@ -4,7 +4,7 @@ export class Search{
   endDate: Date;
   numberOfPeople: number;
   extraServices: string[];
-  accomodationType: string;
+  accommodationType: string;
   distance: number;
   searchFreeDays: number;
   freeToCancel: boolean;
