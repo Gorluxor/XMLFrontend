@@ -139,11 +139,15 @@ export class SearchComponent implements OnInit {
     this.userService.createReservation(this.reservation).subscribe( data => {
       console.log('Create reservation: ');
       console.log(data);
+      this.reservation = data;
+      this.chatRoom.name = 'ChatRoom' + this.reservation.id;
+      this.chatRoom.reservationDTO = this.reservation;
+      this.userService.createChatroom(this.chatRoom).subscribe( data1 => {
+        console.log('Create Chatroom');
+        console.log(data1);
+      });
     });
-    this.userService.createChatroom(this.chatRoom).subscribe( data => {
-      console.log('Create Chatroom');
-      console.log(data);
-    });
+
   }
   onSelect(index) {
     this.selectedUnits[index] = !this.selectedUnits[index];

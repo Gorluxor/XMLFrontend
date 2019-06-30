@@ -10,6 +10,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { ConfirmReservationComponent } from './component/confirm-reservation/confirm-reservation.component';
 import { RespondMessageComponent } from './component/respond-message/respond-message.component';
 import { InboxComponent } from './component/inbox/inbox.component';
+import { AgentReservationsComponent } from './component/agent-reservations/agent-reservations.component';
 
 const agentRoutes: Routes = [
   {
@@ -18,12 +19,13 @@ const agentRoutes: Routes = [
       { path: 'confirm-rsv/:id', component: ConfirmReservationComponent},
       { path: 'messages/:id', component: RespondMessageComponent},
       { path: 'inbox', component: InboxComponent},
+      { path: 'reservations', component: AgentReservationsComponent},
     ]
   },
 ];
 
 @NgModule({
-  declarations: [AgentsComponent, NewUnitComponent, ConfirmReservationComponent, RespondMessageComponent, InboxComponent],
+  declarations: [AgentsComponent, NewUnitComponent, ConfirmReservationComponent, RespondMessageComponent, InboxComponent, AgentReservationsComponent],
   imports: [
     RouterModule.forRoot(agentRoutes),
     ReactiveFormsModule,

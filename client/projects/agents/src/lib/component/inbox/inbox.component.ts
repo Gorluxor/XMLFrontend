@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {AgentsService} from '../../agents.service';
 import {ChatRoom} from '../../../../../../src/model/ChatRoom';
 import {Router} from '@angular/router';
+import {UserService} from '../../../../../user/src/lib/user.service';
+import {User} from '../../../../../../src/model/User';
+import {AuthService} from '../../../../../auth/src/lib/auth.service';
 
 @Component({
   selector: 'lib-inbox',
@@ -10,15 +13,19 @@ import {Router} from '@angular/router';
 })
 export class InboxComponent implements OnInit {
 
+  user: User;
   chatRooms: ChatRoom[];
 
-  constructor(private agentService: AgentsService, private router:
-    Router) { }
+  constructor(private userService: UserService, private agentService: AgentsService, private router:
+    Router,   private authService: AuthService) { }
 
   ngOnInit() {
-    this.agentService.getAllChatRooms().subscribe(data => {
-      this.chatRooms = data;
-      console.log(this.chatRooms);
+    this.userService.getUserByEmail(this.authService.getUsername()).subscribe( data => {
+      this.user = data;
+      this.agentService.getAllChatRooms(this.user.id).subscribe(data1 => {
+        this.chatRooms = data1;
+        console.log(this.chatRooms);
+      });
     });
   }
 

@@ -3,6 +3,9 @@ import {AgentsService} from '../../agents.service';
 import {Message} from '../../../../../../src/model/Message';
 import {ActivatedRoute} from '@angular/router';
 import {FormGroup} from '@angular/forms';
+import {UserService} from '../../../../../user/src/lib/user.service';
+import {AuthService} from '../../../../../auth/src/lib/auth.service';
+import {User} from '../../../../../../src/model/User';
 
 @Component({
   selector: 'lib-respond-message',
@@ -17,8 +20,10 @@ export class RespondMessageComponent implements OnInit {
   messages: Message[];
   date: Date;
   crId: number;
+  user: User;
 
-  constructor(private route: ActivatedRoute, private agentService: AgentsService) {
+  constructor(private route: ActivatedRoute, private agentService: AgentsService, private userService: UserService, private authService:
+  AuthService ) {
 
     this.date = new Date();
 
@@ -27,12 +32,15 @@ export class RespondMessageComponent implements OnInit {
   ngOnInit() {
     this.crId = +this.route.snapshot.paramMap.get('id');
     this.message = new Message();
-    this.agentService.getAllMessages(this.crId).subscribe(data => {
-      this.messages = data;
-      console.log(this.messages);
-      for ( const m of this.messages) {
-        m.timeStamp = new Date(m.timeStamp);
-      }
+    this.userService.getUserByEmail(this.authService.getUsername()).subscribe( data => {
+      this.user = data;
+      this.agentService.getAllMessages(this.crId, this.user.id).subscribe(data1 => {
+        this.messages = data1;
+        console.log(this.messages);
+        for (const m of this.messages) {
+          m.timeStamp = new Date(m.timeStamp);
+        }
+      });
     });
   }
   onRespond() {

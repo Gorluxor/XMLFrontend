@@ -3,6 +3,9 @@ import {FormGroup} from '@angular/forms';
 import {Message} from '../../../../../../src/model/Message';
 import {ActivatedRoute} from '@angular/router';
 import {AgentsService} from '../../../../../agents/src/lib/agents.service';
+import {User} from '../../../../../../src/model/User';
+import {UserService} from '../../user.service';
+import {AuthService} from '../../../../../auth/src/lib/auth.service';
 
 @Component({
   selector: 'lib-chat',
@@ -13,27 +16,35 @@ export class ChatComponent implements OnInit {
 
   form: FormGroup;
 
+  user: User;
   message: Message;
   messages: Message[];
   date: Date;
   crId: number;
 
-  constructor(private route: ActivatedRoute, private agentService: AgentsService) {
+  constructor(private userService: UserService, private route: ActivatedRoute, private agentService: AgentsService, private authService: AuthService) {
 
     this.date = new Date();
 
   }
 
+
   ngOnInit() {
     this.crId = +this.route.snapshot.paramMap.get('id');
     this.message = new Message();
-    this.agentService.getAllMessages(this.crId).subscribe(data => {
-      this.messages = data;
-      console.log(this.messages);
-      for ( const m of this.messages) {
-        m.timeStamp = new Date(m.timeStamp);
-      }
+    this.userService.getUserByEmail(this.authService.getUsername()).subscribe( data => {
+      this.user = data;
+      this.agentService.getAllMessages(this.crId, this.user.id ).subscribe(data1 => {
+        this.messages = data1;
+        console.log(this.messages);
+        for ( const m of this.messages) {
+          m.timeStamp = new Date(m.timeStamp);
+        }
+      });
+
     });
+
+
   }
   onRespond() {
     this.message.timeStamp = new Date();
