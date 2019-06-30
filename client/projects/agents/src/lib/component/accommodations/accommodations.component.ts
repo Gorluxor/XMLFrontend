@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Accommodation} from '../../model/Accommodation';
+import {AgentsService} from '../../agents.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'lib-accommodations',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccommodationsComponent implements OnInit {
 
-  constructor() { }
+  accommodations: Accommodation[];
 
-  ngOnInit() {
+  constructor( private agentService: AgentsService, private router: Router) {
+
   }
 
+  ngOnInit() {
+    this.agentService.getAccommodations().subscribe( data => {
+      this.accommodations = data;
+    });
+  }
+
+  onNew(id) {
+    this.router.navigate(['/agent/new-unit/' + id]);
+  }
 }

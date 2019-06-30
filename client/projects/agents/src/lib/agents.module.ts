@@ -27,6 +27,7 @@ const agentRoutes: Routes = [
       { path: 'inbox', component: InboxComponent},
       { path: 'reservations', component: AgentReservationsComponent},
       { path: 'occupy', component: OccupyUnitComponent},
+      { path: 'accommodations', component: AccommodationsComponent},
       {path: 'acc-types', component: AccommmodationTypeComponent}
     ]
   },
