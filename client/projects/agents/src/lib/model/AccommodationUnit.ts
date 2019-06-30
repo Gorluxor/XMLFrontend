@@ -1,7 +1,7 @@
 import {UnitType} from './UnitType';
 import {ExtraService} from './ExtraService';
 
-export class AccomodationUnit{
+export class AccommodationUnit{
   id: number;
   capacity: number;
   size: number;
