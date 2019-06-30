@@ -1,0 +1,31 @@
+<div class="container ">
+  <br>
+  <br>
+  <br>
+  <h1>Add agent</h1>
+  <br>
+  <br>
+  <br>
+  <form [formGroup]="form" >
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input formControlName="name" [ngClass]="{'red-outline': !form.get('name').valid,'green-outline': form.get('name').valid }"  type="text" class="form-control" id="name" required placeholder="Enter name">
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last name</label>
+      <input formControlName="lastName" [ngClass]="{'red-outline': !form.get('lastName').valid,'green-outline': form.get('lastName').valid }"  type="text" class="form-control" id="lastName" required placeholder="Enter lastName">
+    </div>
+    <small class="text-danger" *ngIf="form.errors?.misMatch">Lozinke se ne podudaraju!</small>
+    <div class="form-group">
+      <label for="address">Country</label>
+      <input formControlName="address" [ngClass]="{'red-outline': !form.get('address').valid,'green-outline': form.get('address').valid }"  type="text" class="form-control" id="address" required placeholder="Enter address">
+    </div>
+    <div class="form-group">
+        <label for="pib">Pib</label>
+        <input formControlName="pib" [ngClass]="{'red-outline': !form.get('pib').valid,'green-outline': form.get('pib').valid }"  type="text" class="form-control" id="pib" required placeholder="Enter pib">
+      </div>
+
+    <button type="submit" [disabled]="form.invalid" (click)="onSubmit()" class="btn btn-primary">New Agent</button>
+  </form>
+</div>

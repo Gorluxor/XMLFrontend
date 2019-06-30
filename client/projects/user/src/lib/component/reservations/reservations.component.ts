@@ -29,7 +29,7 @@ export class ReservationsComponent implements OnInit {
     });
   }
   chat(id) {
-    router.navigate(['/roles']);
+    //router.navigate(['/roles']);
   }
 
 }
