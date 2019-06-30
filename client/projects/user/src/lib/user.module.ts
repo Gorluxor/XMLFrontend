@@ -12,17 +12,21 @@ import {HttpClientModule} from '@angular/common/http';
 import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
 import { SearchComponent } from './component/search/search.component';
 import { AccommodationComponent } from './component/accommodation/accommodation.component';
+import { ChatComponent } from './component/chat/chat.component';
+import { ReservationsComponent } from './component/reservations/reservations.component';
 
 const userRoutes: Routes = [
   {
     path: 'user', component: UserComponent, children: [
       { path: 'search', component: SearchComponent},
+      { path: 'chat/:id', component: ChatComponent},
+      { path: 'reservations', component: ReservationsComponent},
     ]
   },
 ];
 
 @NgModule({
-  declarations: [UserComponent, SearchComponent, AccommodationComponent],
+  declarations: [UserComponent, SearchComponent, AccommodationComponent, ChatComponent, ReservationsComponent],
   imports: [
     RouterModule.forRoot(userRoutes),
     ReactiveFormsModule,

@@ -1,4 +1,4 @@
-<div *ngIf="flag" class="con ">
+<div *ngIf="flag && !unitsFlag" class="con ">
   <div class="container ">
   <form [formGroup]="form" >
 
@@ -65,7 +65,7 @@
   </form>
 </div>
 </div>
-<div *ngIf="!flag" class="container">
+<div *ngIf="!flag && !unitsFlag" class="container">
   <div class="jumbotron">
     <h1>Accommodations</h1>
     <button id="toggleSearch"(click)="toggleSearch()" class="btn btn-primary">Search Accommodations</button>
@@ -83,7 +83,42 @@
     <div class="descr">
       <p >{{a.description}}</p>
     </div>
-    <button type="submit" (click)="onReserve()" class="btn btn-primary reserve">Reserve Now!</button>
+    <button type="submit" (click)="onChoose(a.id)" class="btn btn-primary reserve">Reserve Now!</button>
   </div>
 
 </div>
+<div *ngIf="unitsFlag" class="container pt-5">
+  <h1>Accommodation Units</h1>
+  <table id="tablePreview" class="table table-hover">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Size</th>
+      <th>Type</th>
+      <th>Capacity</th>
+      <th>Cancelation Days</th>
+      <th>Select</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let u of allUnits; let i = index">
+      <th scope="row">{{u.id}}</th>
+      <td>{{u.nameOfUnit}}</td>
+      <td>{{u.size}}</td>
+      <td>{{u.unitTypeDTO.nameOfUnitType}}</td>
+      <td>{{u.capacity}}</td>
+      <td>{{u.cancelationDays}}</td>
+      <td><input (change)="onSelect(i)" type="checkbox"></td>
+
+
+    </tr>
+
+    </tbody>
+  </table>
+  <br>
+  <br>
+  <button type="submit" (click)="onReserve()" class="btn btn-primary">Reserve</button>
+</div>
+

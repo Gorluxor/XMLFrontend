@@ -29,4 +29,25 @@ export class UserService {
   getAllAccommodation(): Observable<any> {
     return this.http.get(this.path.getAllAccomodation);
   }
+  searchAccommodationUnits(search, id): Observable<any> {
+    return this.http.post(this.path.searchAccommodationUnits + id + '/normal' , search, httpOptions);
+  }
+  getUserByEmail(email): Observable<any> {
+    return this.http.get(this.path.getUserByEmail + email);
+  }
+  getReservations(): Observable<any> {
+    return this.http.get(this.path.getReservations);
+  }
+  getPricing(id, search): Observable<any> {
+    console.log('id = ', id);
+    return this.http.post(this.path.getPricing + id + '/search/price', search, httpOptions);
+  }
+
+  createReservation(reservation): Observable<any> {
+    return this.http.post(this.path.createReservation , reservation, httpOptions);
+  }
+  createChatroom(chatroom): Observable<any> {
+    return this.http.post(this.path.createChatRoom , chatroom, httpOptions);
+  }
+
 }

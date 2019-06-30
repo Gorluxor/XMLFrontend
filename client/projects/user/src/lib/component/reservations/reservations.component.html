@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Inbox</h1>
+  <table id="tablePreview" class="table table-hover">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Arrival Date</th>
+      <th>Departure Date</th>
+      <th>Price</th>
+      <th>Stay Realised</th>
+      <th>Cancel</th>
+      <th>Chat with Agent</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let r of reservations">
+      <th scope="row">{{r.id}}</th>
+      <td >{{r.arrivalDate}}</td>
+      <td >{{r.departureDate}}</td>
+      <td >{{r.reservationPrice}}</td>
+      <td >{{r.stayRealized}}</td>
+      <td><button  type="submit" (click)="cancel(r.id)" class="btn btn-primary">Cancel</button></td>
+      <td><button  type="submit" (click)="chat(r.id)" class="btn btn-primary">Chat with Agent</button></td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
