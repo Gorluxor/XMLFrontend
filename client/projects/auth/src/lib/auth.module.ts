@@ -19,7 +19,7 @@ const authRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AuthComponent, LoginComponent, RegisterComponent, AccommodationUnitComponent, AccommmodationTypeComponent],
+  declarations: [AuthComponent, LoginComponent, RegisterComponent, AccommmodationTypeComponent],
   imports: [
     RouterModule.forRoot(authRoutes),
     FormsModule,

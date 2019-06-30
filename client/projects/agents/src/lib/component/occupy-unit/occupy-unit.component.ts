@@ -3,6 +3,11 @@ import {Accommodation} from '../../model/Accommodation';
 import {AccommodationUnit} from '../../model/AccommodationUnit';
 import {HttpClient} from '@angular/common/http';
 import {AgentsService} from '../../agents.service';
+import {Form, FormControl, FormGroup, Validators} from '@angular/forms';
+import {UserService} from '../../../../../user/src/lib/user.service';
+import {AuthService} from '../../../../../auth/src/lib/auth.service';
+import {User} from '../../../../../../src/model/User';
+import {Reservation} from '../../../../../../src/model/Reservation';
 
 @Component({
   selector: 'lib-occupy-unit',
@@ -11,12 +16,26 @@ import {AgentsService} from '../../agents.service';
 })
 export class OccupyUnitComponent implements OnInit {
 
+  selectedUnits: AccommodationUnit[];
+  selectedUnit: AccommodationUnit;
   accommodations: Accommodation[];
   accommodationUnits: AccommodationUnit[];
+  reservation: Reservation;
+  form: FormGroup;
+  user: User;
+  constructor(private http: HttpClient, private agentService: AgentsService, private userService: UserService, private authService: AuthService ) {
+    this.form = new FormGroup({
+      startDate: new FormControl('', Validators.required),
+      endDate: new FormControl('', Validators.required)
 
-  constructor(private http: HttpClient, private agentService: AgentsService) { }
+    });
+  }
 
   ngOnInit() {
+    this.userService.getUserByEmail(this.authService.getUsername()).subscribe(data => {
+      this.user = data;
+      console.log(this.user);
+    });
     this.agentService.getAccommodations().subscribe( data => {
       console.log('ACCOMMODATIONS');
       console.log(data);
@@ -30,4 +49,23 @@ export class OccupyUnitComponent implements OnInit {
     });
   }
 
+  onReserve() {
+    this.reservation = new Reservation();
+    this.reservation.accommodationUnitDTO = this.selectedUnits;
+    this.reservation.userDTO = this.user;
+    this.reservation.arrivalDate = this.form.get('startDate').value;
+    this.reservation.departureDate = this.form.get('endDate').value;
+
+    this.userService.createReservation(this.reservation).subscribe( data => {
+      console.log('Create reservation: ');
+      console.log(data);
+      this.reservation = data;
+    });
+  }
+  onSelect(u) {
+    this.selectedUnits = [];
+    this.selectedUnit = u;
+    this.selectedUnits.push(this.selectedUnit);
+    console.log(this.selectedUnit);
+  }
 }
