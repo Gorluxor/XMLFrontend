@@ -11,6 +11,7 @@ import { ConfirmReservationComponent } from './component/confirm-reservation/con
 import { RespondMessageComponent } from './component/respond-message/respond-message.component';
 import { InboxComponent } from './component/inbox/inbox.component';
 import { AgentReservationsComponent } from './component/agent-reservations/agent-reservations.component';
+import { OccupyUnitComponent } from './component/occupy-unit/occupy-unit.component';
 
 const agentRoutes: Routes = [
   {
@@ -20,12 +21,13 @@ const agentRoutes: Routes = [
       { path: 'messages/:id', component: RespondMessageComponent},
       { path: 'inbox', component: InboxComponent},
       { path: 'reservations', component: AgentReservationsComponent},
+      { path: 'occupy', component: OccupyUnitComponent},
     ]
   },
 ];
 
 @NgModule({
-  declarations: [AgentsComponent, NewUnitComponent, ConfirmReservationComponent, RespondMessageComponent, InboxComponent, AgentReservationsComponent],
+  declarations: [AgentsComponent, NewUnitComponent, ConfirmReservationComponent, RespondMessageComponent, InboxComponent, AgentReservationsComponent, OccupyUnitComponent],
   imports: [
     RouterModule.forRoot(agentRoutes),
     ReactiveFormsModule,

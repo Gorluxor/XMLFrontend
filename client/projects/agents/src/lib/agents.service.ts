@@ -49,6 +49,11 @@ export class AgentsService {
   realiseStay(id): Observable<any> {
     return this.http.get(this.path.realiseStay + id, httpOptions);
   }
-
+  getAccommodationUnits(id): Observable<any> {
+    return this.http.get(this.path.getAccommodationUnits + id + '/unit', httpOptions);
+  }
+  getAccommodations(): Observable<any> {
+    return this.http.get(this.path.getAgentAccommodations , httpOptions);
+  }
 
 }

@@ -1,0 +1,32 @@
+<h1>Accommodation Units</h1>
+<table id="tablePreview" class="table table-hover">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Size</th>
+    <th>Type</th>
+    <th>Capacity</th>
+    <th>Cancelation Days</th>
+    <th>Select</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let u of accommodationUnits; let i = index">
+    <th scope="row">{{u.id}}</th>
+    <td>{{u.nameOfUnit}}</td>
+    <td>{{u.size}}</td>
+    <td>{{u.unitTypeDTO.nameOfUnitType}}</td>
+    <td>{{u.capacity}}</td>
+    <td>{{u.cancelationDays}}</td>
+    <td><input (change)="onSelect(i)" type="checkbox"></td>
+
+
+  </tr>
+
+  </tbody>
+</table>
+<br>
+<br>
+<button type="submit" (click)="onReserve()" class="btn btn-primary">Reserve</button>

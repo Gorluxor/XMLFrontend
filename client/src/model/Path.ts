@@ -23,4 +23,6 @@ export class Path {
   cancelReservation = 'http://localhost:9999/api/agent/res/cancel/';
   createChatRoom = 'http://localhost:9999/api/message/msg/chatRoom/create';
   realiseStay = 'http://localhost:9999/api/agent/res/confirm/';
+  getAccommodationUnits = 'http://localhost:9999/api/agent/acc/';
+  getAgentAccommodations = 'http://localhost:9999/api/agent/acc/';
 }
