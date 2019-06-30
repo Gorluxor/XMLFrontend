@@ -49,5 +49,8 @@ export class UserService {
   createChatroom(chatroom): Observable<any> {
     return this.http.post(this.path.createChatRoom , chatroom, httpOptions);
   }
+  cancelReservation(id): Observable<any> {
+    return this.http.get(this.path.cancelReservation + id, httpOptions);
+  }
 
 }

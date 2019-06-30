@@ -31,17 +31,29 @@ export class AgentsService {
     return this.http.get(this.path.getReservation);
   }
 
-  getAllMessages(id): Observable<any> {
-    return this.http.get(this.path.getMessages + id);
+  getAllMessages(id, id1): Observable<any> {
+    return this.http.get(this.path.getMessages + id1 + '/chatroom/' + id);
   }
 
-  getAllChatRooms(): Observable<any> {
-    return this.http.get(this.path.getChatRooms);
+  getAllChatRooms(id): Observable<any> {
+    return this.http.get(this.path.getChatRooms + id);
   }
 
   respondMessage(id, msg): Observable<any> {
     return this.http.post(this.path.respondMessage + id, msg, httpOptions
     );
+  }
+  getReservations(): Observable<any> {
+    return this.http.get(this.path.getAgentReservations, httpOptions);
+  }
+  realiseStay(id): Observable<any> {
+    return this.http.get(this.path.realiseStay + id, httpOptions);
+  }
+  getAccommodationUnits(id): Observable<any> {
+    return this.http.get(this.path.getAccommodationUnits + id + '/unit', httpOptions);
+  }
+  getAccommodations(): Observable<any> {
+    return this.http.get(this.path.getAgentAccommodations , httpOptions);
   }
 
 }

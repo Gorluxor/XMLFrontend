@@ -3,6 +3,7 @@ import {UserService} from '../../user.service';
 import {User} from '../../../../../../src/model/User';
 import {AuthService} from '../../../../../auth/src/lib/auth.service';
 import {Reservation} from '../../../../../../src/model/Reservation';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'lib-reservations',
@@ -16,7 +17,7 @@ export class ReservationsComponent implements OnInit {
 
   reservations: Reservation[];
 
-  constructor(private userService: UserService, private authService: AuthService) { }
+  constructor(private userService: UserService, private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.userService.getUserByEmail(this.authService.getUsername()).subscribe( data => {
@@ -29,7 +30,14 @@ export class ReservationsComponent implements OnInit {
     });
   }
   chat(id) {
-    //router.navigate(['/roles']);
+    //this.router.navigate(['/user/chat']);
+  }
+  cancel(id) {
+    this.userService.cancelReservation(id).subscribe( data => {
+      console.log('Canceled Reservation');
+      console.log(data);
+      window.location.reload();
+    });
   }
 
 }
