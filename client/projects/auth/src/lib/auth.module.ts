@@ -7,6 +7,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
+import { AccommodationUnitComponent } from './component/accommodation-type/accommodation-unit.component';
+import { AccommmodationTypeComponent } from './component/accommmodation-type/accommmodation-type.component';
 
 const authRoutes: Routes = [
   {
@@ -18,7 +20,7 @@ const authRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AuthComponent, LoginComponent, RegisterComponent],
+  declarations: [AuthComponent, LoginComponent, RegisterComponent, AccommodationUnitComponent, AccommmodationTypeComponent],
   imports: [
     RouterModule.forRoot(authRoutes),
     FormsModule,

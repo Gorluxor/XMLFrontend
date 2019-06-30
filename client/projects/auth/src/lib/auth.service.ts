@@ -24,7 +24,7 @@ export class AuthService {
   }
 
   register(register): Observable<any> {
-    return this.http.post<string>(this.path.register, register);
+    return this.http.post(this.path.register, register);
   }
 
   public saveToken(token: string) {
