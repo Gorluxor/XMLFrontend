@@ -1,6 +1,6 @@
 export class Path {
-  getExtraservices = 'path1';
-  getUnitTypes = 'Path2' ;
+  getExtraservices = 'http://localhost:9999/api/reservation/service/';
+  getUnitTypes = 'http://localhost:9999/api/reservation/unit' ;
   getReservation = 'path3';
   getMessages = 'http://localhost:9999/api/message/msg/user/';
   getChatRooms = 'http://localhost:9999/api/message/msg/user/';
@@ -24,5 +24,6 @@ export class Path {
   createChatRoom = 'http://localhost:9999/api/message/msg/chatRoom/create';
   realiseStay = 'http://localhost:9999/api/agent/res/confirm/';
   getAccommodationUnits = 'http://localhost:9999/api/agent/acc/';
-  getAgentAccommodations = 'http://localhost:9999/api/agent/acc/';
+  getAgentAccommodations = 'http://localhost:9999/api/agent/acc/unitAgent';
+  createUnit = 'http://localhost:9999/api/agent/acc/';
 }

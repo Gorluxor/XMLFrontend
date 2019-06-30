@@ -39,7 +39,7 @@
   <input formControlName="endDate" [ngClass]="{'red-outline': !form.get('endDate').valid,'green-outline': form.get('endDate').valid }"  type="date" class="form-control" id="endDate" required placeholder="Enter End Date">
 </div>
   </form>
-  <button type="submit" [disabled]="form.invalid || selectedUnit == null" (click)="onReserve()" class="btn btn-primary">Reserve</button>
+  <button type="submit" [disabled]="form.invalid || selectedUnit == null" (click)="onReserve()" class="btn btn-primary">Occupy</button>
 </div>
 <br>
 <br>

@@ -1,7 +1,9 @@
 import {UnitType} from './UnitType';
 import {ExtraService} from './ExtraService';
+import {ImageDTO} from './ImageDTO';
+import {LocationDTO} from '../../../../../src/model/LocationDTO';
 
-export class AccommodationUnit{
+export class AccommodationUnit {
   id: number;
   capacity: number;
   size: number;
@@ -10,4 +12,6 @@ export class AccommodationUnit{
   cancelationDays: number;
   lastChangedDate: Date;
   extraServiceDTO: ExtraService[];
+  locationDTO: LocationDTO;
+  imageDTO: ImageDTO[];
 }

@@ -1,41 +1,79 @@
 <div class="con ">
 <div class="container ">
+  <h1>Create New Unit</h1>
+  <br>
+  <br>
+  <br>
 <form [formGroup]="form" >
 
 
+
   <div class="form-group">
-    <label for="name">Name</label>
-    <input formControlName="name" [ngClass]="{'red-outline': !form.get('name').valid,'green-outline': form.get('name').valid }"  type="text" class="form-control" id="name" required placeholder="Enter name">
+    <label for="country">country</label>
+    <input formControlName="country" [ngClass]="{'red-outline': !form.get('country').valid,'green-outline': form.get('country').valid }"  type="text" class="form-control" id="country" required placeholder="Enter country">
   </div>
   <div class="form-group">
-    <label for="size">Size</label>
-    <input formControlName="size" [ngClass]="{'red-outline': !form.get('size').valid,'green-outline': form.get('size').valid }"  type="number" class="form-control" id="size" placeholder="Enter size">
+    <label for="city">city</label>
+    <input formControlName="city" [ngClass]="{'red-outline': !form.get('city').valid,'green-outline': form.get('city').valid }"  type="text" class="form-control" id="city" required placeholder="Enter city">
+  </div>
+  <div class="form-group">
+    <label for="street">street</label>
+    <input formControlName="street" [ngClass]="{'red-outline': !form.get('street').valid,'green-outline': form.get('street').valid }"  type="text" class="form-control" id="street" required placeholder="Enter street">
+  </div>
+  <div class="form-group">
+    <label for="number">number</label>
+    <input formControlName="number" [ngClass]="{'red-outline': !form.get('number').valid,'green-outline': form.get('number').valid }"  type="number" class="form-control" id="number" required placeholder="Enter number">
+  </div>
+
+  <div class="form-group">
+    <label for="postalCode">postalCode</label>
+    <input formControlName="postalCode" [ngClass]="{'red-outline': !form.get('postalCode').valid,'green-outline': form.get('postalCode').valid }"  type="number" class="form-control" id="postalCode" required placeholder="Enter postal Code">
+  </div>
+  <div class="form-group">
+    <label for="latitude">latitude</label>
+    <input formControlName="latitude" [ngClass]="{'red-outline': !form.get('latitude').valid,'green-outline': form.get('latitude').valid }"  type="number" class="form-control" id="latitude" required placeholder="Enter latitude">
+  </div>
+  <div class="form-group">
+    <label for="longitude">longitude</label>
+    <input formControlName="longitude" [ngClass]="{'red-outline': !form.get('longitude').valid,'green-outline': form.get('longitude').valid }"  type="number" class="form-control" id="longitude" required placeholder="Enter longitude">
+  </div>
+
+  <div class="form-group">
+    <label for="imageTitle">Image Title</label>
+    <input formControlName="imageTitle" [ngClass]="{'red-outline': !form.get('imageTitle').valid,'green-outline': form.get('imageTitle').valid }"  type="text" class="form-control" id="imageTitle" required placeholder="Enter image Title">
+  </div>
+  <div class="form-group">
+    <label for="imageUrl">Image Url</label>
+    <input formControlName="imageUrl" [ngClass]="{'red-outline': !form.get('imageUrl').valid,'green-outline': form.get('imageUrl').valid }"  type="text" class="form-control" id="imageUrl" required placeholder="Enter image Url">
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea formControlName="description" [ngClass]="{'red-outline': !form.get('description').valid,'green-outline': form.get('description').valid }"  type="text" class="form-control" id="description" placeholder="Enter description"></textarea>
   </div>
   <div class="form-group">
     <label for="capacity">Capacity</label>
     <input formControlName="capacity" [ngClass]="{'red-outline': !form.get('capacity').valid,'green-outline': form.get('capacity').valid }"  type="number" class="form-control" id="capacity" placeholder="Enter capacity">
   </div>
   <div class="form-group">
+    <label for="cancelationDays">Cancelation Days</label>
+    <input formControlName="cancelationDays" [ngClass]="{'red-outline': !form.get('cancelationDays').valid,'green-outline': form.get('cancelationDays').valid }"  type="number" class="form-control" id="cancelationDays" placeholder="Enter cancelation Days">
+  </div>
+  <div class="form-group">
     <label for="type">Type</label>
     <select (change)="onChangeType()" formControlName="type" [ngClass]="{'red-outline': !form.get('type').valid,'green-outline': form.get('type').valid }"   class="form-control" id="type"  >
-      <option value="" disabled selected>Select Type</option>
-      <option value="1">Type 1</option>
-      <option value="2">Type 2</option>
-      <option value="3">Type 3</option>
+      <option *ngFor="let t of unitTypes" value="{{t.id}}" >{{t.nameOfUnitType}}</option>
+
+
 
     </select>
   </div>
-  <div class = "form-group">
-    <label>Select target certificate: </label>
-    <ng-multiselect-dropdown [placeholder]="'Select Services'"
-                             [data]="dropdownList"
-                              formControlName="services"
-                             [settings]="dropdownSettings"
-                             (onSelect)="onItemSelect($event)"
-                             (onSelectAll)="onSelectAll($event)"
+  <div class="form-group">
+    <label for="extraServices">Extra Services</label>
+    <select multiple  formControlName="extraServices"  class="form-control" id="extraServices"  >
+      <option *ngFor="let s of allExtraServices"  value="{{s.id}}">{{s.nameOfService}}</option>
 
-    >
-    </ng-multiselect-dropdown>
+
+    </select>
   </div>
 
   <button type="submit" [disabled]="form.invalid" (click)="onSubmit()" class="btn btn-primary">Submit</button>

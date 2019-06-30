@@ -14,6 +14,9 @@ import {AccommmodationTypeComponent} from "./component/accommmodation-type/accom
 import { UnitTypeComponent } from './component/unit-type/unit-type.component';
 import { ExtraServiceComponent } from './component/extra-service/extra-service.component';
 import { AddAgentComponent } from './component/add-agent/add-agent.component';
+import {AgentReservationsComponent} from './component/agent-reservations/agent-reservations.component';
+import {OccupyUnitComponent} from './component/occupy-unit/occupy-unit.component';
+import { AccommodationsComponent } from './component/accommodations/accommodations.component';
 
 const agentRoutes: Routes = [
   {
@@ -22,13 +25,15 @@ const agentRoutes: Routes = [
       { path: 'confirm-rsv/:id', component: ConfirmReservationComponent},
       { path: 'messages/:id', component: RespondMessageComponent},
       { path: 'inbox', component: InboxComponent},
-      {path:'acc-types',component:AccommmodationTypeComponent}
+      { path: 'reservations', component: AgentReservationsComponent},
+      { path: 'occupy', component: OccupyUnitComponent},
+      {path: 'acc-types', component: AccommmodationTypeComponent}
     ]
   },
 ];
 
 @NgModule({
-  declarations: [AgentsComponent, NewUnitComponent, ConfirmReservationComponent, RespondMessageComponent, InboxComponent, AccommmodationTypeComponent, UnitTypeComponent, ExtraServiceComponent, AddAgentComponent],
+  declarations: [AgentReservationsComponent, OccupyUnitComponent, AgentsComponent, NewUnitComponent, ConfirmReservationComponent, RespondMessageComponent, InboxComponent, AccommmodationTypeComponent, UnitTypeComponent, ExtraServiceComponent, AddAgentComponent, AccommodationsComponent],
   imports: [
     RouterModule.forRoot(agentRoutes),
     ReactiveFormsModule,

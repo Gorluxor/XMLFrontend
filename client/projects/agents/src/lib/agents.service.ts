@@ -56,4 +56,8 @@ export class AgentsService {
     return this.http.get(this.path.getAgentAccommodations , httpOptions);
   }
 
+  createUnit(id, accommodation): Observable<any> {
+    return this.http.post(this.path.createUnit + id + '/unit' , accommodation, httpOptions
+    );
+  }
 }
