@@ -4,11 +4,12 @@ import {AccommodationUnit} from '../../model/AccommodationUnit';
 import {HttpClient} from '@angular/common/http';
 
 import {Form, FormControl, FormGroup, Validators} from '@angular/forms';
-import {UserService} from "../../../../client/projects/user/src/lib/user.service";
-import {AuthService} from "../../../../client/projects/auth/src/lib/auth.service";
+
 import {Reservation} from "../../model/Reservation";
 import {User} from "../../model/User";
 import {AgentsService} from "../../service/agents.service";
+import {UserService} from "../../service/user.service";
+import {AuthService} from "../../service/auth.service";
 
 
 @Component({

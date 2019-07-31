@@ -6,6 +6,7 @@ import {UnitType} from '../../model/UnitType';
 import {AccommodationUnit} from '../../model/AccommodationUnit';
 import {ImageDTO} from '../../model/ImageDTO';
 import {AgentsService} from "../../service/agents.service";
+import {LocationDTO} from "../../model/LocationDTO";
 
 @Component({
   selector: 'lib-new-unit',

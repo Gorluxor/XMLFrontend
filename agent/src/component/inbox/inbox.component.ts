@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {UserService} from "../../../../client/projects/user/src/lib/user.service";
+
 import {User} from "../../model/User";
 import {ChatRoom} from "../../model/ChatRoom";
 import {AgentsService} from "../../service/agents.service";
+import {UserService} from "../../service/user.service";
+import {AuthService} from "../../service/auth.service";
 
 
 @Component({
@@ -17,7 +19,7 @@ export class InboxComponent implements OnInit {
   chatRooms: ChatRoom[];
 
   constructor(private userService: UserService, private agentService: AgentsService, private router:
-    Router) { }
+    Router,   private authService: AuthService) { }
 
   ngOnInit() {
     this.userService.getUserByEmail(this.authService.getUsername()).subscribe( data => {
