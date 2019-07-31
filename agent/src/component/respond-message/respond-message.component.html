@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Messages</h1>
+</div>
+
+
+<div  class ="container">
+  <div class="jumbotron">
+    <div class="cr" *ngFor="let m of messages">
+      <p class="sender" >{{m.sender.name}} {{m.sender.lastName}}: &nbsp;&nbsp;</p><p class="msg">{{m.msg}}</p>
+    <p class="timestamp">{{m.timeStamp.getUTCDay()}}/{{m.timeStamp.getUTCMonth()}}/{{m.timeStamp.getUTCFullYear()}}&nbsp;&nbsp;
+      {{m.timeStamp.getUTCHours()}}:{{m.timeStamp.getUTCMinutes()}}:{{m.timeStamp.getUTCSeconds()}}</p>
+      <br>
+    </div>
+    <br>
+    <textarea [(ngModel)]="message.msg "></textarea>
+    <br>
+    <br>
+    <button (click)="onRespond()" class="btn btn-primary">Respond</button>
+  </div>
+  <br>
+  <br>
+  <br>
+</div>

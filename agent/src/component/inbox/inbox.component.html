@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Inbox</h1>
+<table id="tablePreview" class="table table-hover">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Chatroom Name</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let cr of chatRooms">
+    <th scope="row">{{cr.id}}</th>
+    <td (click)="onClick(cr.id)">{{cr.name}}</td>
+  </tr>
+
+  </tbody>
+</table>
+</div>

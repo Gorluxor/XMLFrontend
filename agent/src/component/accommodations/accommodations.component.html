@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Accommodation Units</h1>
+  <br>
+  <br>
+  <br>
+  <table id="tablePreview" class="table table-hover">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Add New Unit</th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr  *ngFor="let u of accommodations; let i = index">
+      <th scope="row">{{u.id}}</th>
+      <td>{{u.name}}</td>
+      <td>{{u.description}}</td>
+      <td><button type="submit" (click)="onNew(u.id)" class="btn btn-primary">New Unit</button></td>
+
+
+    </tr>
+
+    </tbody>
+  </table>
+</div>
