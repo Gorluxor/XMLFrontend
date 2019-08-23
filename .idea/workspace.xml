@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd49d4ed-1675-49ea-8416-7760cf0a1c00" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/agent/src/service/auth.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/agent/src/service/auth.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/agent/src/service/user.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/agent/src/service/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agent/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/agent/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agent/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/agent/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agent/src/component/inbox/inbox.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/agent/src/component/inbox/inbox.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agent/src/component/new-unit/new-unit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/agent/src/component/new-unit/new-unit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agent/src/component/occupy-unit/occupy-unit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/agent/src/component/occupy-unit/occupy-unit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agent/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/agent/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent/src/component/accommmodation-type/accommmodation-type.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/agent/src/component/accommmodation-type/accommmodation-type.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,11 +14,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/agent/src/component/inbox/inbox.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="238">
               <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
@@ -52,7 +42,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/agent/src/component/occupy-unit/occupy-unit.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
+            <state relative-caret-position="289">
               <caret line="28" column="137" selection-start-line="28" selection-start-column="137" selection-end-line="28" selection-end-column="137" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
@@ -87,7 +77,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/agent/src/component/new-unit/new-unit.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="1071">
               <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
@@ -99,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/agent/src/service/auth.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="221">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -111,7 +101,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/agent/src/service/user.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="221">
               <caret line="16" selection-start-line="13" selection-start-column="7" selection-end-line="17" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
@@ -124,7 +114,7 @@
         <entry file="file://$PROJECT_DIR$/agent/src/service/agentServis.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="54" column="18" lean-forward="true" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
+              <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -176,6 +166,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -187,26 +178,6 @@
               <item name="XMLFrontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="XMLFrontend" type="462c0819:PsiDirectoryNode" />
               <item name="agent" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="XMLFrontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="XMLFrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="agent" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="XMLFrontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="XMLFrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="agent" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="XMLFrontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="XMLFrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="agent" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="XMLFrontend" type="b2602c69:ProjectViewProjectNode" />
@@ -260,7 +231,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -272,7 +242,7 @@
     <property name="node.js.selected.package.tslint" value="C:\Users\Nikola.DESKTOP-99CSOUE\NOVIFRONT\XMLFrontend\client\node_modules\tslint" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="ts.external.directory.path" value="C:\Users\Nikola.DESKTOP-99CSOUE\NOVIFRONT\XMLFrontend\client\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\Luka\Documents\GitHub\XmlFront\XMLFrontend\agent\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -302,21 +272,21 @@
       <option name="presentableId" value="Default" />
       <updated>1564530730886</updated>
       <workItem from="1564530732357" duration="5988000" />
+      <workItem from="1565822432044" duration="15000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5988000" />
+    <option name="totallyTimeSpent" value="6003000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24983476" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24968314" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.32839838" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
@@ -345,9 +315,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/agent/src/model/ObjectFactory.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/agent/src/model/ObjectFactory.ts" />
     <entry file="file://$PROJECT_DIR$/client/projects/agents/src/lib/model/ObjectFactory.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -391,18 +359,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/agent/src/model/SyncData.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/agent/src/model/SyncData.ts" />
     <entry file="file://$PROJECT_DIR$/agent/src/model/UnitType.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/agent/src/model/User.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/agent/src/model/Pricing.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/agent/src/model/Pricing.ts" />
     <entry file="file://$PROJECT_DIR$/agent/src/model/Message.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -504,16 +468,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/agent/src/app/token-interceptor.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/agent/src/app/token-interceptor.ts" />
     <entry file="file://$PROJECT_DIR$/agent/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -542,7 +497,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/agent/src/component/inbox/inbox.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="238">
           <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
@@ -562,7 +517,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/agent/src/component/occupy-unit/occupy-unit.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
+        <state relative-caret-position="289">
           <caret line="28" column="137" selection-start-line="28" selection-start-column="137" selection-end-line="28" selection-end-column="137" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
@@ -589,7 +544,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/agent/src/component/new-unit/new-unit.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="1071">
           <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
@@ -599,8 +554,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/agent/src/service/auth.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="221">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
@@ -609,7 +564,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/agent/src/service/user.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="221">
           <caret line="16" selection-start-line="13" selection-start-column="7" selection-end-line="17" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
@@ -620,7 +575,7 @@
     <entry file="file://$PROJECT_DIR$/agent/src/service/agentServis.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="54" column="18" lean-forward="true" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
+          <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>

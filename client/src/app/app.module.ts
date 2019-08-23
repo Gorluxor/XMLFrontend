@@ -13,6 +13,8 @@ import {AdminModule} from '../../projects/admin/src/lib/admin.module';
 import {UserModule} from '../../projects/user/src/lib/user.module';
 import {AuthModule} from '../../projects/auth/src/lib/auth.module';
 import {TokenInterceptor} from '../../projects/agents/src/lib/token-interceptor';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
  // { path: 'agent', component: AgentsComponent },
@@ -20,7 +22,9 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

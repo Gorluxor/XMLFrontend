@@ -1,0 +1,52 @@
+<div class="container">
+  <br>
+  <br>
+  <br>
+<h1>Accommodation Units</h1>
+  <br>
+  <br>
+  <br>
+<table id="tablePreview" class="table table-hover">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Size</th>
+    <th>Type</th>
+    <th>Capacity</th>
+    <th>Cancelation Days</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr (click)="onSelect(u)" *ngFor="let u of accommodationUnits; let i = index">
+    <th scope="row">{{u.id}}</th>
+    <td>{{u.nameOfUnit}}</td>
+    <td>{{u.size}}</td>
+    <td>{{u.unitTypeDTO.nameOfUnitType}}</td>
+    <td>{{u.capacity}}</td>
+    <td>{{u.cancelationDays}}</td>
+
+
+  </tr>
+
+  </tbody>
+</table>
+<br>
+<br>
+<div class="container ">
+  <form [formGroup]="form" >
+<div class="form-group">
+  <label for="startDate">Start Date</label>
+  <input formControlName="startDate" [ngClass]="{'red-outline': !form.get('startDate').valid,'green-outline': form.get('startDate').valid }"  type="date" class="form-control" id="startDate" required placeholder="Enter Start Date">
+</div>
+<div class="form-group">
+  <label for="endDate">End Date</label>
+  <input formControlName="endDate" [ngClass]="{'red-outline': !form.get('endDate').valid,'green-outline': form.get('endDate').valid }"  type="date" class="form-control" id="endDate" required placeholder="Enter End Date">
+</div>
+  </form>
+  <button type="submit" [disabled]="form.invalid || selectedUnit == null" (click)="onReserve()" class="btn btn-primary">Occupy</button>
+</div>
+<br>
+<br>
+</div>
