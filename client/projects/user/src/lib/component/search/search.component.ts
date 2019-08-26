@@ -56,10 +56,13 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.getUserByEmail(this.authService.getUsername()).subscribe(data => {
-      this.user = data;
-      console.log(this.user);
-    });
+    console.log(this.authService.getUsername());
+    if (this.authService.getUsername() != null) {
+      this.userService.getUserByEmail(this.authService.getUsername()).subscribe(data => {
+        this.user = data;
+        console.log(this.user);
+      });
+    }
   }
 
   toggleSearch() {
@@ -114,6 +117,7 @@ export class SearchComponent implements OnInit {
 
   }
   onReserve() {
+    // TODO: Ako je this.user null ispisati morate prvo da se ulogujete
     let i = 0;
     this.units = [];
     for (const s of this.selectedUnits) {
@@ -150,6 +154,12 @@ export class SearchComponent implements OnInit {
 
   }
   onSelect(index) {
+    if(this.authService.getUsername() == null)
+    {
+      alert('Morate se prvo ulogovati!');
+      window.location.href = './auth/login';
+    }
+
     this.selectedUnits[index] = !this.selectedUnits[index];
   }
 }

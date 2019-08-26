@@ -15,8 +15,20 @@
       width: 100%;
     }
 
-    li {
+    /*li {
       float: left;
+    }*/
+
+    .left {
+      float: left;
+    }
+
+    .right {
+      float: right;
+    }
+
+    .desno {
+      float: right;
     }
 
     li a {
@@ -28,10 +40,14 @@
     }
 
     li a:hover:not(.active) {
-      background-color: #111;
+      background-color: royalblue;
     }
 
     .active {
+      background-color: #4CAF50;
+    }
+
+    .nesto {
       background-color: #4CAF50;
     }
   </style>
@@ -39,8 +55,22 @@
 <body>
 
 <ul>
-  <li><a routerLink="/auth/register">Register</a></li>
-  <li><a routerLink="/auth/login">Login</a></li>
+
+  <li><a  class="left" routerLink="/user/search">Search</a></li>
+  <li><a *ngIf="info.token!=null && authority!='admin'" class="left" routerLink="/user/reservations">Reservations</a></li>
+  <!-- *ngIf="authority==='admin'" *ngIf="authority==='user'" -->
+  <li><a *ngIf="authority==='admin'" class="nesto" class="left" routerLink="/admin/users">Manage users</a></li>
+  <li><a *ngIf="authority==='admin'" class="nesto" class="left" routerLink="/admin/new-agent">New agent</a></li>
+  <li><a *ngIf="authority==='admin'" class="nesto" class="left" routerLink="/admin/accTypes">Manage AccType</a></li>
+  <li><a *ngIf="authority==='admin'" class="nesto" class="left" routerLink="/admin/extraServices">Manage ExtraServices</a></li>
+
+
+  <li><a *ngIf="info.token==null"class="desno" routerLink="/auth/login">Login</a></li>
+  <li><a *ngIf="info.token!=null" class="desno" (click)="logout()">Logout </a> </li>
+  <li><a *ngIf="info.token==null" class="desno" routerLink="/auth/register">Register</a></li>
+
+
+
 </ul>
 
 </body>

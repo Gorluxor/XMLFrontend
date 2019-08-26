@@ -25,13 +25,13 @@ export class ExtraServiceComponent implements OnInit {
     this.form = new FormGroup({
       name: new FormControl('', [Validators.required,
         Validators.pattern('^[a-zA-Z]+$')]),
-      datum: new FormControl('',Validators.required)
+      datum: new FormControl('', Validators.required)
     });
 
     this.formI = new FormGroup({
       nameI: new FormControl('', [Validators.required,
         Validators.pattern('^[a-zA-Z]+$')]),
-      datumI: new FormControl('',Validators.required)
+      datumI: new FormControl('', Validators.required)
     });
   }
 

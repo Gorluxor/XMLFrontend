@@ -48,7 +48,7 @@ export class AccommmodationTypeComponent implements OnInit {
 
   onSubmit() {
     this.type = new AccType();
-    this.type.name = this.form.get('name').value;
+    this.type.nameOfAccType = this.form.get('name').value;
     this.type.lastChangedDate = this.form.get('datum').value;
 
     this.agentService.addType(this.type).subscribe(data => {
@@ -62,7 +62,7 @@ export class AccommmodationTypeComponent implements OnInit {
   izmeniSubmit() {
 
     this.typei = new AccType();
-    this.typei.name = this.formI.get('nameI').value;
+    this.typei.nameOfAccType = this.formI.get('nameI').value;
     this.typei.lastChangedDate = this.formI.get('datumI').value;
 
     this.agentService.changeType(this.typei,this.idIzmena).subscribe(data => {

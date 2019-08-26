@@ -10,6 +10,7 @@ export class Path {
   searchAccommodationUnits = 'http://localhost:9999/api/search/search/accommodation/';
   login = 'http://localhost:9999/api/auth/users/login';
   register = 'http://localhost:9999/api/auth/users/signup';
+  getRoleRequest = 'http://localhost:9999/api/auth/users/role';
   getUsers = 'http://localhost:9999/api/auth/users';
   activateUser = 'http://localhost:9999/api/auth/users/activate/';
   blockUser = 'http://localhost:9999/api/auth/users/block/';
@@ -26,4 +27,14 @@ export class Path {
   getAccommodationUnits = 'http://localhost:9999/api/agent/acc/';
   getAgentAccommodations = 'http://localhost:9999/api/agent/acc/unitAgent';
   createUnit = 'http://localhost:9999/api/agent/acc/';
+  registerAgent = 'http://localhost:9999/api/auth/users/agentRegister';
+  getAllTypes = 'http://localhost:9999/api/reservation/type' ;
+  addType = 'http://localhost:9999/api/reservation/type' ;
+  deleteType = 'http://localhost:9999/api/reservation/type' ;
+  getType = 'http://localhost:9999/api/reservation/type' ;
+
+  getExtraServices = 'http://localhost:9999/api/reservation/service' ;
+
+
+
 }

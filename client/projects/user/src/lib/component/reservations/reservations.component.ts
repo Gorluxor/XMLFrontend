@@ -30,7 +30,8 @@ export class ReservationsComponent implements OnInit {
     });
   }
   chat(id) {
-    //this.router.navigate(['/user/chat']);
+    console.log('ID ' + id);
+    this.router.navigate(['/user/chat/' + id]);
   }
   cancel(id) {
     this.userService.cancelReservation(id).subscribe( data => {

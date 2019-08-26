@@ -9,17 +9,23 @@ import { NewAgentComponent } from './component/new-agent/new-agent.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import { ManageUsersComponent } from './component/manage-users/manage-users.component';
+import { ManageExtraServicesComponent } from './component/manage-extra-services/manage-extra-services.component';
+import { ManageAccTypeComponent } from './component/manage-acc-type/manage-acc-type.component';
 
 const adminRoutes: Routes = [
   {
     path: 'admin', component: AdminComponent, children: [
       { path: 'new-agent', component: NewAgentComponent},
-      { path: 'users', component: ManageUsersComponent}
+      { path: 'users', component: ManageUsersComponent},
+      { path: 'accTypes', component: ManageAccTypeComponent},
+      { path: 'extraServices', component: ManageExtraServicesComponent}
+
+
     ]
   },
 ];
 @NgModule({
-  declarations: [AdminComponent, NewAgentComponent, ManageUsersComponent],
+  declarations: [AdminComponent, NewAgentComponent, ManageUsersComponent, ManageExtraServicesComponent, ManageAccTypeComponent],
   imports: [
     RouterModule.forRoot(adminRoutes),
     FormsModule,

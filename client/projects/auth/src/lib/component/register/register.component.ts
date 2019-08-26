@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {AuthService} from "../../auth.service";
-import {Registration} from "../../model/Registration";
-import {PasswordValidator} from "../../validator/PasswordValidator";
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../../auth.service';
+import {Registration} from '../../model/Registration';
+import {PasswordValidator} from '../../validator/PasswordValidator';
 
 @Component({
   selector: 'lib-register',
@@ -16,7 +16,6 @@ export class RegisterComponent implements OnInit {
 
   constructor(private authService: AuthService) {
     this.form = new FormGroup({
-      userName: new FormControl('', Validators.required ),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
       repeat: new FormControl('', [Validators.required, Validators.minLength(6)]),
       name: new FormControl('', [Validators.required,
@@ -27,17 +26,15 @@ export class RegisterComponent implements OnInit {
       country: new FormControl('', Validators.required ),
       telephone: new FormControl('', Validators.required ),
       email: new FormControl('', [Validators.required, Validators.email ])
-    },PasswordValidator);
+    }, PasswordValidator);
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onSubmit() {
     this.register = new Registration();
     this.register.email = this.form.get('email').value;
-    this.register.username = this.form.get('userName').value;
-    //this.register.pib = this.form.get('pib').value;
+    // this.register.pib = this.form.get('pib').value;
     this.register.birthday = this.form.get('birthday').value;
     this.register.lastName = this.form.get('lastName').value;
     this.register.name = this.form.get('name').value;
@@ -48,6 +45,7 @@ export class RegisterComponent implements OnInit {
 
     this.authService.register(this.register).subscribe(data => {
         console.log('Successfull register');
+        window.location.href = './auth/login';
       }
     );
 
