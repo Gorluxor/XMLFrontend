@@ -35,6 +35,8 @@ export class Path {
 
   getExtraServices = 'http://localhost:9999/api/reservation/service' ;
 
-
+  getRatings = 'http://localhost:9999/api/reservation/rating' ;
+  getRealisedReservations = 'http://localhost:9999/api/agent/res/user/realised';
+  rate = 'http://localhost:9999/api/reservation/rating/add';
 
 }

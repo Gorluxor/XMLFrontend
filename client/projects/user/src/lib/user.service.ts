@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Path} from '../../../../src/model/Path';
+import {Rating} from '../../../admin/src/lib/model/Rating';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -53,4 +54,10 @@ export class UserService {
     return this.http.get(this.path.cancelReservation + id, httpOptions);
   }
 
+  getRealisedReservations(): Observable<any> {
+  return this.http.get(this.path.getRealisedReservations);
+}
+  oceni(rating: Rating): Observable<any> {
+    return this.http.post(this.path.rate, rating, httpOptions);
+  }
 }

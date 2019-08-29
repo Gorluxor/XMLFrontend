@@ -85,4 +85,13 @@ export class AdminService {
     return this.http.delete(this.path.getExtraServices + '/' + id);
   }
 
+  getRatings(): Observable<any> {
+    console.log(this.path.getRatings);
+    return this.http.get(this.path.getRatings + '/' + 'AllNotApproved');
+  }
+
+  approveRating(id: number): Observable<any> {
+    return this.http.put(this.path.getRatings + '/approve/' + id, httpOptions);
+  }
+
 }

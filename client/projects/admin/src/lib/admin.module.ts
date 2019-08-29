@@ -11,6 +11,7 @@ import {CommonModule} from '@angular/common';
 import { ManageUsersComponent } from './component/manage-users/manage-users.component';
 import { ManageExtraServicesComponent } from './component/manage-extra-services/manage-extra-services.component';
 import { ManageAccTypeComponent } from './component/manage-acc-type/manage-acc-type.component';
+import { ManageRatingsComponent } from './component/manage-ratings/manage-ratings.component';
 
 const adminRoutes: Routes = [
   {
@@ -18,14 +19,16 @@ const adminRoutes: Routes = [
       { path: 'new-agent', component: NewAgentComponent},
       { path: 'users', component: ManageUsersComponent},
       { path: 'accTypes', component: ManageAccTypeComponent},
-      { path: 'extraServices', component: ManageExtraServicesComponent}
+      { path: 'extraServices', component: ManageExtraServicesComponent},
+      { path: 'ratings', component: ManageRatingsComponent}
+
 
 
     ]
   },
 ];
 @NgModule({
-  declarations: [AdminComponent, NewAgentComponent, ManageUsersComponent, ManageExtraServicesComponent, ManageAccTypeComponent],
+  declarations: [AdminComponent, NewAgentComponent, ManageUsersComponent, ManageExtraServicesComponent, ManageAccTypeComponent, ManageRatingsComponent],
   imports: [
     RouterModule.forRoot(adminRoutes),
     FormsModule,

@@ -44,6 +44,8 @@ export class LoginComponent implements OnInit {
     //  const role = this.authService.getRoleRequest(this.login.email);
       // console.log('role JE ', role);
       // this.authService.saveRole(role.toString());
+      }, error1 => {
+        alert('Pogresni podaci ili korisnik nije aktiviran!');
       }
     );
 

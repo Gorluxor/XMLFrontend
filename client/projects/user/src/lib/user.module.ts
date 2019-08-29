@@ -14,6 +14,7 @@ import { SearchComponent } from './component/search/search.component';
 import { AccommodationComponent } from './component/accommodation/accommodation.component';
 import { ChatComponent } from './component/chat/chat.component';
 import { ReservationsComponent } from './component/reservations/reservations.component';
+import { RateComponent } from './component/rate/rate.component';
 
 const userRoutes: Routes = [
   {
@@ -21,12 +22,13 @@ const userRoutes: Routes = [
       { path: 'search', component: SearchComponent},
       { path: 'chat/:id', component: ChatComponent},
       { path: 'reservations', component: ReservationsComponent},
+      { path: 'rate', component: RateComponent}
     ]
   },
 ];
 
 @NgModule({
-  declarations: [UserComponent, SearchComponent, AccommodationComponent, ChatComponent, ReservationsComponent],
+  declarations: [UserComponent, SearchComponent, AccommodationComponent, ChatComponent, ReservationsComponent, RateComponent],
   imports: [
     RouterModule.forRoot(userRoutes),
     ReactiveFormsModule,
