@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Path} from "../model/Path";
-import {JWT} from "../model/JWT";
+import {Path} from '../model/Path';
+import {JWT} from '../model/JWT';
+import {LoginResponse} from '../model/LoginResponse';
 
 
 const httpOptions = {
@@ -22,6 +23,10 @@ export class AuthService {
 
   login(login): Observable<any> {
     return this.http.post<JWT>(this.path.login, login, httpOptions);
+  }
+
+  loginSoap(login): Observable<any> {
+    return this.http.post<LoginResponse>(this.path.loginLokalno, login, httpOptions);
   }
 
   register(register): Observable<any> {
@@ -44,5 +49,18 @@ export class AuthService {
 
   public getUsername(): string {
     return sessionStorage.getItem('username');
+  }
+
+  public saveRole(authorities: string) {
+    window.sessionStorage.removeItem('role');
+    window.sessionStorage.setItem('role', authorities);
+  }
+
+  public getRole(): string {
+    return window.sessionStorage.getItem('role');
+  }
+
+  signOut() {
+    window.sessionStorage.clear();
   }
 }

@@ -22,6 +22,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import {TokenInterceptor} from './token-interceptor';
 import { FooterComponent } from './component/footer/footer.component';
+import { LoginComponent } from './component/login/login.component';
 
 
 
@@ -33,10 +34,11 @@ const agentRoutes: Routes = [
       { path: 'confirm-rsv/:id', component: ConfirmReservationComponent},
       { path: 'messages/:id', component: RespondMessageComponent},
       { path: 'inbox', component: InboxComponent},
-      { path: 'reservations', component: AgentReservationsComponent},
       { path: 'occupy', component: OccupyUnitComponent},
       { path: 'accommodations', component: AccommodationsComponent},
-      {path: 'acc-types', component: AccommmodationTypeComponent}
+      {path: 'acc-types', component: AccommmodationTypeComponent},
+  { path: 'reserve', component: AgentReservationsComponent},
+  {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
@@ -55,6 +57,7 @@ const agentRoutes: Routes = [
     UnitTypeComponent,
     NavbarComponent,
     FooterComponent,
+    LoginComponent,
 
   ],
   imports: [

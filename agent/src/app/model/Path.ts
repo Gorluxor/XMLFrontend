@@ -26,4 +26,7 @@ export class Path {
   getAccommodationUnits = 'http://localhost:9999/api/agent/acc/';
   getAgentAccommodations = 'http://localhost:9999/api/agent/acc/unitAgent';
   createUnit = 'http://localhost:9999/api/agent/acc/';
+
+  loginLokalno = 'http://localhost:8080/api/agent/res/Login';
+
 }
