@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 import {Router} from '@angular/router';
-import {UserService} from '../../../../../client/projects/user/src/lib/user.service';
-import {AuthService} from '../../../../../client/projects/auth/src/lib/auth.service';
 import {User} from '../../model/User';
 import {Reservation} from '../../model/Reservation';
 import {AgentsService} from '../../service/agents.service';
+import {UserService} from "../../service/user.service";
+import {AuthService} from "../../service/auth.service";
 
 
 @Component({
