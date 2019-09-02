@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Reservations</h1>
+  <table id="tablePreview" class="table table-hover">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Comment</th>
+      <th>Rating value</th>
+      <th>User ID</th>
+      <th>Accommodation ID</th>
+      <th>Cancel</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let r of ratings">
+      <th scope="row">{{r.id}}</th>
+      <td >{{r.comment}}</td>
+      <td >{{r.rating_value}}</td>
+      <td >{{r.user_id}}</td>
+      <td >{{r.accommodation_id}}</td>
+      <td><button  type="submit" (click)="cancel(r.id)" class="btn btn-primary">Approve</button></td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>

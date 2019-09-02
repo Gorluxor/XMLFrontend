@@ -17,6 +17,9 @@ export class ReservationsComponent implements OnInit {
 
   reservations: Reservation[];
 
+  newreservations: Reservation[];
+
+
   constructor(private userService: UserService, private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -30,7 +33,8 @@ export class ReservationsComponent implements OnInit {
     });
   }
   chat(id) {
-    //this.router.navigate(['/user/chat']);
+    console.log('ID ' + id);
+    this.router.navigate(['/user/chat/' + id]);
   }
   cancel(id) {
     this.userService.cancelReservation(id).subscribe( data => {

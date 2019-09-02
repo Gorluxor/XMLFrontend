@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {margin:0;}
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    /*li {
+      float: left;
+    }*/
+
+    .left {
+      float: left;
+    }
+
+    .right {
+      float: right;
+    }
+
+    .desno {
+      float: right;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+      background-color: royalblue;
+    }
+
+    .active {
+      background-color: #4CAF50;
+    }
+
+    .nesto {
+      background-color: #4CAF50;
+    }
+  </style>
+</head>
+<body>
+
+<ul>
+
+  <li><a  class="left" routerLink="/user/search">Search</a></li>
+  <li><a *ngIf="info.token!=null && authority!='admin'" class="left" routerLink="/user/reservations">Reservations</a></li>
+  <!-- *ngIf="authority==='admin'" *ngIf="authority==='user'" -->
+  <li><a *ngIf="authority==='admin'" class="nesto" class="left" routerLink="/admin/users">Manage users</a></li>
+  <li><a *ngIf="authority==='admin'" class="nesto" class="left" routerLink="/admin/new-agent">New agent</a></li>
+  <li><a *ngIf="authority==='admin'" class="nesto" class="left" routerLink="/admin/accTypes">Manage AccType</a></li>
+  <li><a *ngIf="authority==='admin'" class="nesto" class="left" routerLink="/admin/extraServices">Manage ExtraServices</a></li>
+  <li><a *ngIf="authority==='admin'" class="nesto" class="left" routerLink="/admin/ratings">Manage Ratings</a></li>
+
+
+
+  <li><a *ngIf="info.token==null"class="desno" routerLink="/auth/login">Login</a></li>
+  <li><a *ngIf="info.token!=null" class="desno" (click)="logout()">Logout </a> </li>
+  <li><a *ngIf="info.token==null" class="desno" routerLink="/auth/register">Register</a></li>
+
+
+
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<div class="container ">
+  <br>
+  <br>
+  <br>
+  <h1>AccTypes</h1>
+  <br>
+  <br>
+  <br>
+  <form *ngIf="dodajForm" [formGroup]="form" >
+
+    <h2>Add AccTypes</h2>
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input formControlName="name" [ngClass]="{'red-outline': !form.get('name').valid,'green-outline': form.get('name').valid }"  type="text" class="form-control" id="name" required placeholder="Enter name">
+    </div>
+    <button type="submit" [disabled]="form.invalid" (click)="onSubmit()" class="btn btn-primary">New AccType</button>
+  </form>
+
+
+  <div  class="container ">
+    <div class="jumbotron ">
+      <h1 class="ml-lg-5">AccTypes</h1>
+      <br>
+      <table>
+
+        <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Izmena</th>
+          <th>Brisanje</th>
+        </tr>
+        </thead>
+        <tbody >
+
+        <tr *ngFor="let s of types">
+          <td >{{s.id}}</td>
+          <td >{{s.nameOfAccType}}</td>
+          <td><button (click)="izmeni(s.id)"  class="btn btn-primary">Izmeni</button></td>
+          <td><button (click)="obrisi(s.id)"  class="btn btn-primary">Obrisi</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <form *ngIf="izmeniForm" [formGroup]="formI" >
+
+
+    <div class="form-group">
+      <label for="nameI">Name</label>
+      <input formControlName="nameI" [ngClass]="{'red-outline': !formI.get('nameI').valid,'green-outline': formI.get('nameI').valid }"  type="text" class="form-control" id="nameI" required placeholder="Enter name">
+    </div>
+    <button type="submit" [disabled]="formI.invalid" (click)="izmeniSubmit()" class="btn btn-primary">Change UnitType</button>
+  </form>
+</div>

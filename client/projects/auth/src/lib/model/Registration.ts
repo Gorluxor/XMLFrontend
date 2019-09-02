@@ -6,8 +6,7 @@ export class Registration{
   lastName: string;
   email: string;
   password: string;
-  repeatPassword:string;
-  username: string;
+  repeatPassword: string;
   country: string;
   birthday: Date;
   phoneNumber: string;

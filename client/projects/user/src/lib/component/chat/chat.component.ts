@@ -34,9 +34,10 @@ export class ChatComponent implements OnInit {
     this.message = new Message();
     this.userService.getUserByEmail(this.authService.getUsername()).subscribe( data => {
       this.user = data;
-      this.agentService.getAllMessages(this.crId, this.user.id ).subscribe(data1 => {
+      console.log('OnInit CrID: ' + this.crId);
+      this.agentService.getAllMessages(this.crId, this.user.id).subscribe(data1 => {
         this.messages = data1;
-        console.log(this.messages);
+        console.log('Poruke: ', this.messages);
         for ( const m of this.messages) {
           m.timeStamp = new Date(m.timeStamp);
         }
@@ -50,7 +51,8 @@ export class ChatComponent implements OnInit {
     this.message.timeStamp = new Date();
     this.message.sender = this.messages[0].sender;
     this.message.receiver = this.messages[0].receiver;
-    this.agentService.respondMessage(this.crId, this.message).subscribe(
+    console.log('onRespond CrID: ' + this.crId);
+    this.agentService.respondMessage(this.crId, this.message).subscribe( // crID jeste zapravo reservation ID
       data => {
         console.log(this.message);
         window.location.reload();

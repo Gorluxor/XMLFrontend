@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Login} from '../../model/Login';
 import {AuthService} from '../../auth.service';
-import * as jwt_decode from "jwt-decode";
+import * as jwt_decode from 'jwt-decode';
+import {TokenPayload} from '../../TokenPayload';
+
 @Component({
   selector: 'lib-login',
   templateUrl: './login.component.html',
@@ -13,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
   login: Login;
+  authority: any;
 
   constructor(private authService: AuthService) {
     this.form = new FormGroup({
@@ -34,7 +37,15 @@ export class LoginComponent implements OnInit {
       this.authService.saveToken(data);
       this.authService.saveUsername(jwt_decode(data).sub);
       console.log(jwt_decode(data));
-      console.log('Successfull Login');
+      const tokenPayload: TokenPayload = jwt_decode(data);
+      console.log('Successfull Login', tokenPayload.auth[0].authority);
+      this.authService.saveRole(tokenPayload.auth[0].authority);
+      window.location.href = './user/search';
+    //  const role = this.authService.getRoleRequest(this.login.email);
+      // console.log('role JE ', role);
+      // this.authService.saveRole(role.toString());
+      }, error1 => {
+        alert('Pogresni podaci ili korisnik nije aktiviran!');
       }
     );
 
