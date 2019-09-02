@@ -17,12 +17,12 @@ export class Path {
   getUserByEmail = 'http://localhost:9999/api/auth/users/email/';
   getAllAccomodation = ' ';
   getReservations = 'http://localhost:9999/api/agent/res/user';
-  getAgentReservations = 'http://localhost:9999/api/agent/res/agent';
+  getAgentReservations = 'http://localhost:8080/api/agent/res/GetListReservationsForAgent';
   getPricing = 'http://localhost:9999/api/agent/unit/';
   createReservation = 'http://localhost:9999/api/agent/res';
   cancelReservation = 'http://localhost:9999/api/agent/res/cancel/';
   createChatRoom = 'http://localhost:9999/api/message/msg/chatRoom/create';
-  realiseStay = 'http://localhost:9999/api/agent/res/confirm/';
+  realiseStay = 'http://localhost:8080/api/agent/res/ConfirmReservation/';
   getAccommodationUnits = 'http://localhost:9999/api/agent/acc/';
   getAgentAccommodations = 'http://localhost:9999/api/agent/acc/unitAgent';
   createUnit = 'http://localhost:9999/api/agent/acc/';

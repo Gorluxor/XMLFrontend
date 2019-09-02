@@ -4,8 +4,8 @@ import {Router} from '@angular/router';
 import {User} from '../../model/User';
 import {Reservation} from '../../model/Reservation';
 import {AgentsService} from '../../service/agents.service';
-import {UserService} from "../../service/user.service";
-import {AuthService} from "../../service/auth.service";
+import {UserService} from '../../service/user.service';
+import {AuthService} from '../../service/auth.service';
 
 
 @Component({
@@ -23,12 +23,12 @@ export class AgentReservationsComponent implements OnInit {
               private router: Router, private agentService: AgentsService) {}
 
   ngOnInit() {
-    this.userService.getUserByEmail(this.authService.getUsername()).subscribe( data => {
-      this.user = data;
+    /* this.userService.getUserByEmail(this.authService.getUsername()).subscribe( data => {
+       this.user = data;
 
-    });
-    this.agentService.getReservations().subscribe(data => {
-      this.reservations = data;
+     });*/
+    this.agentService.getReservations(this.authService.getUsername()).subscribe(data => {
+      this.reservations = data.reservationDTO;
       console.log(this.reservations);
     });
   }
@@ -42,4 +42,5 @@ export class AgentReservationsComponent implements OnInit {
 
 
   }
+
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Path} from "../model/Path";
+import {Path} from '../model/Path';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -43,8 +43,8 @@ export class AgentsService {
     return this.http.post(this.path.respondMessage + id, msg, httpOptions
     );
   }
-  getReservations(): Observable<any> {
-    return this.http.get(this.path.getAgentReservations, httpOptions);
+  getReservations(email: string): Observable<any> {
+    return this.http.get(this.path.getAgentReservations+ '/' + email);
   }
   realiseStay(id): Observable<any> {
     return this.http.get(this.path.realiseStay + id, httpOptions);
