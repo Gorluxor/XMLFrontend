@@ -2,9 +2,9 @@ export class Path {
   getExtraservices = 'http://localhost:9999/api/reservation/service/';
   getUnitTypes = 'http://localhost:9999/api/reservation/unit' ;
   getReservation = 'path3';
-  getMessages = 'http://localhost:9999/api/message/msg/user/';
-  getChatRooms = 'http://localhost:9999/api/message/msg/user/';
-  respondMessage = 'http://localhost:9999/api/message/msg/';
+  getMessages = 'http://localhost:8080/api/agent/res/GetListMessagesForChatRoom/';
+  getChatRooms = 'http://localhost:8080/api/agent/res/GetChatRooms/';
+  respondMessage = 'http://localhost:8080/api/agent/res/SendMessage/';
   searchAccommodation = 'http://localhost:9999/api/search/search/accommodation/normal';
   advancedSearchAccommodation = 'http://localhost:9999/api/search/search/accommodation/advanced';
   searchAccommodationUnits = 'http://localhost:9999/api/search/search/accommodation/';

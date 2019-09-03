@@ -5,13 +5,17 @@
   <tr>
     <th>ID</th>
     <th>Chatroom Name</th>
+    <th>Messages</th>
   </tr>
   </thead>
 
   <tbody>
   <tr *ngFor="let cr of chatRooms">
     <th scope="row">{{cr.id}}</th>
-    <td (click)="onClick(cr.id)">{{cr.name}}</td>
+    <td>{{cr.name}}</td>
+    <td><button type="submit" (click)="onClick(cr.id)" class="btn btn-primary">Poruke</button></td>
+
+
   </tr>
 
   </tbody>

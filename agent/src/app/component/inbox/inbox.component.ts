@@ -25,14 +25,19 @@ export class InboxComponent implements OnInit {
     this.userService.getUserByEmail(this.authService.getUsername()).subscribe( data => {
       this.user = data;
       this.agentService.getAllChatRooms(this.user.id).subscribe(data1 => {
-        this.chatRooms = data1;
+        this.chatRooms = data1.chatRoomDTO;
         console.log(this.chatRooms);
       });
     });
   }
 
   onClick(id) {
-    this.router.navigate(['agent/messages/' + id]);
+
+    this.authService.saveCR(id);
+
+    window.location.href = './messages';
+
+
   }
 
 }

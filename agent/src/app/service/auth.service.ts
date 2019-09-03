@@ -8,7 +8,7 @@ import {LoginResponse} from '../model/LoginResponse';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
-}
+};
 
 @Injectable({
   providedIn: 'root'
@@ -58,6 +58,15 @@ export class AuthService {
 
   public getRole(): string {
     return window.sessionStorage.getItem('role');
+  }
+
+  public saveCR(id: number) {
+    window.sessionStorage.removeItem('cr');
+    window.sessionStorage.setItem('cr', String(id));
+  }
+
+  public getCR(): string {
+    return window.sessionStorage.getItem('cr');
   }
 
   signOut() {

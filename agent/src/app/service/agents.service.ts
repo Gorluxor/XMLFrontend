@@ -32,7 +32,7 @@ export class AgentsService {
   }
 
   getAllMessages(id, id1): Observable<any> {
-    return this.http.get(this.path.getMessages + id1 + '/chatroom/' + id);
+    return this.http.get(this.path.getMessages + id + '/' + id1);
   }
 
   getAllChatRooms(id): Observable<any> {
@@ -40,8 +40,7 @@ export class AgentsService {
   }
 
   respondMessage(id, msg): Observable<any> {
-    return this.http.post(this.path.respondMessage + id, msg, httpOptions
-    );
+    return this.http.put(this.path.respondMessage + id, msg, httpOptions);
   }
   getReservations(email: string): Observable<any> {
     return this.http.get(this.path.getAgentReservations+ '/' + email);

@@ -32,7 +32,7 @@ const agentRoutes: Routes = [
 
       { path: 'new-unit/:id', component: NewUnitComponent},
       { path: 'confirm-rsv/:id', component: ConfirmReservationComponent},
-      { path: 'messages/:id', component: RespondMessageComponent},
+      { path: 'messages', component: RespondMessageComponent},
       { path: 'inbox', component: InboxComponent},
       { path: 'occupy', component: OccupyUnitComponent},
       { path: 'accommodations', component: AccommodationsComponent},
