@@ -19,6 +19,7 @@ import {AuthService} from '../../service/auth.service';
 })
 export class OccupyUnitComponent implements OnInit {
 
+  accommodationUnitsByAgent: AccommodationUnit[];
   selectedUnits: AccommodationUnit[];
   selectedUnit: AccommodationUnit;
   accommodations: Accommodation[];
@@ -38,6 +39,9 @@ export class OccupyUnitComponent implements OnInit {
     this.userService.getUserByEmail(this.authService.getUsername()).subscribe(data => {
       this.user = data;
       console.log(this.user);
+    });
+    this.agentService.getAccommodationsByAgent(this.authService.getUsername()).subscribe( data => {
+      this.accommodationUnitsByAgent = data;
     });
     this.agentService.getAccommodations().subscribe( data => {
       console.log('ACCOMMODATIONS');

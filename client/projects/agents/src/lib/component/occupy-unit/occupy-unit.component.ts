@@ -20,6 +20,7 @@ export class OccupyUnitComponent implements OnInit {
   selectedUnit: AccommodationUnit;
   accommodations: Accommodation[];
   accommodationUnits: AccommodationUnit[];
+
   reservation: Reservation;
   form: FormGroup;
   user: User;

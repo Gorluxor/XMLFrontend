@@ -19,7 +19,7 @@
   </thead>
 
   <tbody>
-  <tr (click)="onSelect(u)" *ngFor="let u of accommodationUnits; let i = index">
+  <tr (click)="onSelect(u)" *ngFor="let u of accommodationUnitsByAgent; let i = index">
     <th scope="row">{{u.id}}</th>
     <td>{{u.nameOfUnit}}</td>
     <td>{{u.size}}</td>
