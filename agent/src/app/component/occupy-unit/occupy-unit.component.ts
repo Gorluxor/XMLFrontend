@@ -40,10 +40,11 @@ export class OccupyUnitComponent implements OnInit {
       this.user = data;
       console.log(this.user);
     });
-    this.agentService.getAccommodationsByAgent(this.authService.getUsername()).subscribe( data => {
-      this.accommodationUnitsByAgent = data;
+    this.agentService.getAccommodationUnitsByAgent(this.authService.getUsername()).subscribe( data1 => {
+      this.accommodationUnitsByAgent = data1.accommodationUnitDTO;
+      console.log(data1);
     });
-    this.agentService.getAccommodations().subscribe( data => {
+    /*this.agentService.getAccommodations().subscribe( data => {
       console.log('ACCOMMODATIONS');
       console.log(data);
       this.accommodations = data;
@@ -53,7 +54,7 @@ export class OccupyUnitComponent implements OnInit {
           this.accommodationUnits.push(au);
         }
       }
-    });
+    });*/
   }
 
   onReserve() {
@@ -66,7 +67,7 @@ export class OccupyUnitComponent implements OnInit {
     this.userService.createReservation(this.reservation).subscribe( data => {
       console.log('Create reservation: ');
       console.log(data);
-      this.reservation = data;
+      this.reservation = data.reservationDTO;
     });
   }
   onSelect(u) {

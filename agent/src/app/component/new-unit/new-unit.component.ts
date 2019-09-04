@@ -7,6 +7,7 @@ import {AccommodationUnit} from '../../model/AccommodationUnit';
 import {ImageDTO} from '../../model/ImageDTO';
 import {AgentsService} from '../../service/agents.service';
 import {LocationDTO} from '../../model/LocationDTO';
+import {PricingDTO} from '../../model/PricingDTO';
 
 @Component({
   selector: 'app-new-unit',
@@ -17,6 +18,11 @@ export class NewUnitComponent implements OnInit {
 
   accId: number;
   form: FormGroup;
+  cena18: number;
+  cena19: number;
+  
+  pr: PricingDTO;
+  prr: PricingDTO;
 
 
 
@@ -27,11 +33,7 @@ export class NewUnitComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private agentService: AgentsService) {
     this.form = new FormGroup({
-      country: new FormControl('', Validators.required ),
-      city: new FormControl('', Validators.required ),
-      street: new FormControl('', Validators.required ),
-      number: new FormControl('', Validators.required ),
-      postalCode: new FormControl('', Validators.required ),
+      nameOfUnit: new FormControl('', Validators.required ),
       latitude: new FormControl('', Validators.required ),
       longitude: new FormControl('', Validators.required ),
       imageUrl: new FormControl('', Validators.required ),
@@ -54,13 +56,13 @@ export class NewUnitComponent implements OnInit {
     this.onChangeType();
 
     this.agentService.getAllUnitTypes().subscribe(data => {
-      this.unitTypes = data;
+      this.unitTypes = data.unitTypeDTO;
       console.log(this.unitTypes);
     });
 
     this.agentService.getAllExtraServices().subscribe(data => {
       console.log('Get All Services');
-      this.allExtraServices = data;
+      this.allExtraServices = data.extraServiceDTO;
       console.log(data);
     });
   }
@@ -71,16 +73,34 @@ export class NewUnitComponent implements OnInit {
     this.accommodationUnit = new AccommodationUnit();
     this.accommodationUnit.locationDTO = new LocationDTO();
     this.accommodationUnit.cancelationDays = this.form.get('cancelationDays').value;
-    this.accommodationUnit.locationDTO.country = this.form.get('country').value;
-    this.accommodationUnit.locationDTO.city = this.form.get('city').value;
-    this.accommodationUnit.locationDTO.street = this.form.get('street').value;
-    this.accommodationUnit.locationDTO.number = this.form.get('number').value;
-    this.accommodationUnit.locationDTO.latitude = this.form.get('latitude').value;
-    this.accommodationUnit.locationDTO.longitude = this.form.get('longitude').value;
-    this.accommodationUnit.locationDTO.postalCode = this.form.get('postalCode').value;
+    this.accommodationUnit.nameOfUnit = this.form.get('nameOfUnit').value;
+
+    /* this.accommodationUnit.locationDTO.country = this.form.get('country').value;
+     this.accommodationUnit.locationDTO.city = this.form.get('city').value;
+     this.accommodationUnit.locationDTO.street = this.form.get('street').value;
+     this.accommodationUnit.locationDTO.number = this.form.get('number').value;
+          this.accommodationUnit.locationDTO.postalCode = this.form.get('postalCode').value;*/
+
+    this.cena18 = this.form.get('latitude').value;
+    this.cena19 = this.form.get('longitude').value;
     this.accommodationUnit.nameOfUnit = this.form.get('description').value;
     this.accommodationUnit.capacity = this.form.get('capacity').value;
     this.accommodationUnit.extraServiceDTO = [];
+
+    this.accommodationUnit.pricingDTO = [];
+    
+    this.pr = new PricingDTO();
+    this.prr = new PricingDTO();
+
+    this.pr.price = this.cena18;
+    this.pr.startDate= new Date();
+    this.prr.price = this.cena19;
+    this.prr.startDate = new Date();
+    this.prr.startDate.setFullYear(2020);
+    
+    this.accommodationUnit.pricingDTO.push(this.pr);
+    this.accommodationUnit.pricingDTO.push(this.prr);
+
     for ( const s of this.form.get('extraServices').value) {
 
       for ( const as of this.allExtraServices) {

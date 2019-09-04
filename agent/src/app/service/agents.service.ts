@@ -59,8 +59,13 @@ export class AgentsService {
     return this.http.get(this.path.getAccommodationsAgentId + id , httpOptions);
   }
 
+  getAccommodationUnitsByAgent(id): Observable<any> {
+    return this.http.get(this.path.getUnitsAgentId + id , httpOptions);
+  }
+
+
   createUnit(id, accommodation): Observable<any> {
-    return this.http.post(this.path.createUnit + id + '/unit' , accommodation, httpOptions
+    return this.http.post(this.path.createUnit + id, accommodation, httpOptions
     );
   }
 }
