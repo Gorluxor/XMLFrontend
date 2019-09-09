@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../../service/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,11 +10,20 @@ export class NavbarComponent implements OnInit {
 
   info: any;
   roles: string[];
-  authority: string;
+  authority: boolean;
 // private tokenStorage : TokenStorageService
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    if(this.authService.getUsername()!=null)
+    {
+      this.authority = true;
+    }
+    else
+    {
+      this.authority=false;
+    }
+
   /*  this.info={
       token : this.tokenStorage.getToken(),
       username : this.tokenStorage.getUsername(),
@@ -42,8 +52,8 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-   /* this.tokenStorage.signOut();
-    location.replace('/home');*/
+    this.authService.signOut();
+    window.location.href = './login';
   }
 
 

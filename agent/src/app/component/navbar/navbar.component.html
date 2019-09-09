@@ -44,7 +44,11 @@
 
   <li><a routerLink="/reserve">Reservations</a></li>
   <li><a routerLink="/accommodations">Accommodations</a></li>
-  <li><a routerLink="/acc-types">Acc-types</a></li>
+  <li><a *ngIf="authority==false" routerLink="/login">Login</a></li>
+  <li><a *ngIf="authority!=false" (click)="logout()">Logout</a></li>
+
+
+
 </ul>
 
 </body>

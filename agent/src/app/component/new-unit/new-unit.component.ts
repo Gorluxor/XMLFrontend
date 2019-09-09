@@ -138,6 +138,8 @@ export class NewUnitComponent implements OnInit {
     this.agentService.createUnit( this.accId, this.accommodationUnit).subscribe( data => {
       console.log('created Unit');
       console.log(data);
+
+      window.location.href = './accommodations'
     });
 
   }

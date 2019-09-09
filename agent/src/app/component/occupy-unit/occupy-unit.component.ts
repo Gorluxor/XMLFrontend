@@ -68,6 +68,8 @@ export class OccupyUnitComponent implements OnInit {
       console.log('Create reservation: ');
       console.log(data);
       this.reservation = data.reservationDTO;
+
+      window.location.href = './reserve'
     });
   }
   onSelect(u) {

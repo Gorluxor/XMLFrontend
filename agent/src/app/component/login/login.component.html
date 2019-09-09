@@ -18,6 +18,6 @@
       <input formControlName="password" [ngClass]="{'red-outline': !form.get('password').valid,'green-outline': form.get('password').valid }"  type="password" class="form-control" id="password" required placeholder="Enter Password">
     </div>
 
-    <button type="submit" [disabled]="form.invalid" (click)="onSubmit()" class="btn btn-primary">New Agent</button>
+    <button type="submit" [disabled]="form.invalid" (click)="onSubmit()" class="btn btn-primary">Login</button>
   </form>
 </div>

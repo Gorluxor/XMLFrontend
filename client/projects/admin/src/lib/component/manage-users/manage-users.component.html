@@ -7,8 +7,6 @@
       <th>Name</th>
       <th>Last Name</th>
       <th>Email</th>
-      <th>Country</th>
-      <th>PIB</th>
       <th>Phone Number</th>
       <th>Activate</th>
       <th>Block</th>
@@ -22,8 +20,6 @@
       <td>{{u.name}}</td>
       <td>{{u.lastName}}</td>
       <td>{{u.email}}</td>
-      <td>{{u.country}}</td>
-      <td>{{u.pib}}</td>
       <td>{{u.phoneNumber}}</td>
       <td> <button [disabled]="u.activatedUser" type="submit" (click)="activate(u.id)" class="btn btn-primary green">Activate</button></td>
       <td> <button  [disabled]="!u.activatedUser" type="submit" (click)="block(u.id)" class="btn btn-primary yellow">Block</button></td>

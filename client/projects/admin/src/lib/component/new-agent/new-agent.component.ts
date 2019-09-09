@@ -47,7 +47,10 @@ export class NewAgentComponent implements OnInit {
 
     this.adminService.registerAgent(this.register).subscribe(data => {
         console.log('Successfull register');
-        window.location.href = './admin/new-agent';
+        window.location.href = './admin/users';
+      },error1 => {
+        window.location.href = './admin/users';
+
       }
     );
   }

@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
         const tokenPayload: TokenPayload = jwt_decode(data.return);
         console.log('Successfull Login');
         this.authService.saveRole(tokenPayload.auth[0].authority);
+        window.location.href = './accommodations'
       }
 
 

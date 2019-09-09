@@ -56,8 +56,10 @@
 
 <ul>
 
-  <li><a  class="left" routerLink="/user/search">Search</a></li>
+  <li><a  *ngIf="info.token==null || authority!='admin'" class="left" routerLink="/user/search">Search</a></li>
   <li><a *ngIf="info.token!=null && authority!='admin'" class="left" routerLink="/user/reservations">Reservations</a></li>
+  <li><a *ngIf="info.token!=null && authority!='admin'" class="left" routerLink="/user/rate">Oceni</a></li>
+
   <!-- *ngIf="authority==='admin'" *ngIf="authority==='user'" -->
   <li><a *ngIf="authority==='admin'" class="nesto" class="left" routerLink="/admin/users">Manage users</a></li>
   <li><a *ngIf="authority==='admin'" class="nesto" class="left" routerLink="/admin/new-agent">New agent</a></li>

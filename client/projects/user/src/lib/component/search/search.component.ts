@@ -149,6 +149,7 @@ export class SearchComponent implements OnInit {
       this.userService.createChatroom(this.chatRoom).subscribe( data1 => {
         console.log('Create Chatroom');
         console.log(data1);
+        window.location.href = './user/reservations'
       });
     });
 

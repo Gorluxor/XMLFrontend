@@ -40,7 +40,12 @@ export class LoginComponent implements OnInit {
       const tokenPayload: TokenPayload = jwt_decode(data);
       console.log('Successfull Login', tokenPayload.auth[0].authority);
       this.authService.saveRole(tokenPayload.auth[0].authority);
-      window.location.href = './user/search';
+
+      if(this.authService.getRole() === 'ROLE_ADMIN')
+      {
+        window.location.href = './admin/users';
+      }else
+        window.location.href = './user/search';
     //  const role = this.authService.getRoleRequest(this.login.email);
       // console.log('role JE ', role);
       // this.authService.saveRole(role.toString());
