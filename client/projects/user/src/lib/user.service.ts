@@ -57,6 +57,10 @@ export class UserService {
   getRealisedReservations(): Observable<any> {
   return this.http.get(this.path.getRealisedReservations);
 }
+  getRatings(): Observable<any> {
+    return this.http.get(this.path.getApprovedRatings);
+  }
+
   oceni(rating: Rating): Observable<any> {
     return this.http.post(this.path.rate, rating, httpOptions);
   }

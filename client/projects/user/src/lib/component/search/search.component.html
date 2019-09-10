@@ -70,6 +70,7 @@
     <h1>Accommodations</h1>
     <button id="toggleSearch"(click)="toggleSearch()" class="btn btn-primary">Search Accommodations</button>
   </div>
+  <div>
   <div *ngFor="let a of accommodations" class="jumbotron">
     <h3>{{a.name}}</h3>
 
@@ -87,6 +88,27 @@
     </div>
     <img class="hotel" src="../../../../../../assets/img/hotel.jpg"/>
     <button type="submit" (click)="onChoose(a.id)" class="btn btn-primary reserve">Reserve Now!</button>
+    <div class="jumbotron">
+      <h3>Comments</h3>
+    </div>
+    <div *ngFor="let r of ratings">
+      <ng-container *ngIf="a.id==r.accommodationDTO.id">
+        <div class="jumbotron white">
+          Name:
+          <div class="bold ">{{r.userDTO.name}} {{r.userDTO.lastName}}</div>
+          <div class="rated">  Rated: <div class="bold">{{r.ratingValue}} Stars</div></div>
+
+
+          Comment:
+
+          <div class="bold">   {{r.comment}}</div>
+
+
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
   </div>
 
 </div>

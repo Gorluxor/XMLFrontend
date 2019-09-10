@@ -9,6 +9,8 @@ import {Reservation} from '../../../../../../src/model/Reservation';
 import {AuthService} from '../../../../../auth/src/lib/auth.service';
 import {User} from '../../../../../../src/model/User';
 import {ChatRoom} from '../../../../../../src/model/ChatRoom';
+import {Rating} from "../../../../../admin/src/lib/model/Rating";
+import {RatingDTO} from "../../../../../admin/src/lib/model/RatingDTO";
 
 @Component({
   selector: 'lib-search',
@@ -29,6 +31,7 @@ export class SearchComponent implements OnInit {
   user: User;
   chatRoom: ChatRoom;
   reservation: Reservation;
+  ratings: RatingDTO[];
 
   selectedUnits: boolean[];
 
@@ -63,6 +66,12 @@ export class SearchComponent implements OnInit {
         console.log(this.user);
       });
     }
+    this.userService.getRatings().subscribe(data => {
+        this.ratings = data;
+        console.log('Successfull GetRatings');
+        console.log(this.ratings);
+      }
+    );
   }
 
   toggleSearch() {

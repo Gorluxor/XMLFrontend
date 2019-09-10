@@ -39,4 +39,6 @@ export class Path {
   getRealisedReservations = 'http://localhost:9999/api/agent/res/user/realised';
   rate = 'http://localhost:9999/api/reservation/rating/add';
 
+  getApprovedRatings = 'http://localhost:9999/api/agent/acc/getAllApprovedRatings' ;
+
 }

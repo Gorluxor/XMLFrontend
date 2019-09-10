@@ -35,4 +35,13 @@ h3{
   padding-bottom: 30px;
   margin: auto;
 }
+.bold{
+  font-weight: bolder;
+}
+.rated{
+  float: right;
+}
+.white{
+  background-color: white;
+}
 
